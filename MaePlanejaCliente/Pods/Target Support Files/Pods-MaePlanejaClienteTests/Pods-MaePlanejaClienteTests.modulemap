@@ -1,0 +1,6 @@
+framework module Pods_MaePlanejaClienteTests {
+  umbrella header "Pods-MaePlanejaClienteTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
