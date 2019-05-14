@@ -18,6 +18,7 @@
 		FD9CFB3D22846DBE002EBADB /* MaePlanejaClienteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB3C22846DBE002EBADB /* MaePlanejaClienteTests.swift */; };
 		FD9CFB4822846DBE002EBADB /* MaePlanejaClienteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */; };
 		FD9CFB5622846E88002EBADB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */; };
+		FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F17228AFB9700164C8E /* Produto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaePlanejaClienteUITests.swift; sourceTree = "<group>"; };
 		FD9CFB4922846DBE002EBADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FDDE5F17228AFB9700164C8E /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		FD9CFB2622846DBD002EBADB /* MaePlanejaCliente */ = {
 			isa = PBXGroup;
 			children = (
+				FDDE5F16228AFB6F00164C8E /* Models */,
 				FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */,
 				FD9CFB2722846DBD002EBADB /* AppDelegate.swift */,
 				FD9CFB2922846DBD002EBADB /* ViewController.swift */,
@@ -166,6 +169,14 @@
 				FD9CFB4922846DBE002EBADB /* Info.plist */,
 			);
 			path = MaePlanejaClienteUITests;
+			sourceTree = "<group>";
+		};
+		FDDE5F16228AFB6F00164C8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDDE5F17228AFB9700164C8E /* Produto.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +342,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -339,6 +351,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -401,6 +414,7 @@
 			files = (
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
+				FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,8 @@ target 'MaePlanejaCliente' do
   # Pods for MaePlanejaCliente
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Storage'
 
   target 'MaePlanejaClienteTests' do
     inherit! :search_paths
