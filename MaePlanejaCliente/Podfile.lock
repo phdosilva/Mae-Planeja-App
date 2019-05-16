@@ -68,12 +68,14 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NavigationDrawer (1.0.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Core
   - Firebase/Database
   - Firebase/Storage
+  - NavigationDrawer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -89,6 +91,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - NavigationDrawer
 
 SPEC CHECKSUMS:
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
@@ -103,7 +106,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NavigationDrawer: 45ed18696d0d2f4679d05af690040074f7df57da
 
-PODFILE CHECKSUM: f027e81d4de300f126465e0a3024796b995de971
+PODFILE CHECKSUM: f609db8a1bc9966a0c617941f8e4c35589d4f546
 
 COCOAPODS: 1.6.1

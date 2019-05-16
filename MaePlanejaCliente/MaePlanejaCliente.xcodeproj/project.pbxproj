@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		25C667EA228DF1F300134C9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25C667E9228DF1F300134C9E /* GoogleService-Info.plist */; };
+		25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C667EB228DF70E00134C9E /* SlidingViewController.swift */; };
 		9EC1D366DDF6FD66FEFCFC52 /* Pods_MaePlanejaCliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		25C667E9228DF1F300134C9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		25C667EB228DF70E00134C9E /* SlidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingViewController.swift; sourceTree = "<group>"; };
 		6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaCliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D259E482BAB8C163C6910A8 /* Pods-MaePlanejaClienteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteTests.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteTests/Pods-MaePlanejaClienteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				FDDE5F19228D8B2200164C8E /* HomeStoryboard.storyboard */,
 				FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */,
 				FDDE5F1D228D8E1600164C8E /* HomeViewController.swift */,
+				25C667EB228DF70E00134C9E /* SlidingViewController.swift */,
 			);
 			path = MaePlanejaCliente;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/NavigationDrawer/NavigationDrawer.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -366,6 +370,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NavigationDrawer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -428,6 +433,7 @@
 				FDDE5F1E228D8E1600164C8E /* HomeViewController.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
 				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,
+				25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
 				FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */,
 				FDDE5F20228D997F00164C8E /* EnumTables.swift in Sources */,
