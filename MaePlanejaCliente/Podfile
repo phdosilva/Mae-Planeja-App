@@ -10,6 +10,7 @@ target 'MaePlanejaCliente' do
   pod 'Firebase/Database'
   pod 'Firebase/Analytics'
   pod 'Firebase/Storage'
+  pod 'NavigationDrawer'
 
   target 'MaePlanejaClienteTests' do
     inherit! :search_paths

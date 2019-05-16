@@ -10,13 +10,61 @@ import UIKit
 import FirebaseDatabase
 import FirebaseStorage
 
-class ViewController: UIViewController {
+import NavigationDrawer
+
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
+    
+    let interactor = Interactor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //populate()
     
     }
+    
+    /* ----- MENU ----- */
+    
+    @IBAction func homeButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "showSlidingMenu", sender: nil)
+    }
+    
+    @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        let translation = sender.translation(in: view)
+        
+        let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)
+        
+        MenuHelper.mapGestureStateToInteractor(
+            gestureState: sender.state,
+            progress: progress,
+            interactor: interactor){
+                self.performSegue(withIdentifier: "showSlidingMenu", sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? SlidingViewController {
+            destinationViewController.transitioningDelegate = self
+            destinationViewController.interactor = self.interactor
+        }
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentMenuAnimator()
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return DismissMenuAnimator()
+    }
+    
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return interactor.hasStarted ? interactor : nil
+    }
+    
+    /* ----- MENU ----- */
     
     func populate(){
         let ref: DatabaseReference! = Database.database().reference()
