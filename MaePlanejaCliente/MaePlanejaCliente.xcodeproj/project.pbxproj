@@ -19,6 +19,10 @@
 		FD9CFB4822846DBE002EBADB /* MaePlanejaClienteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */; };
 		FD9CFB5622846E88002EBADB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */; };
 		FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F17228AFB9700164C8E /* Produto.swift */; };
+		FDDE5F1A228D8B2200164C8E /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDDE5F19228D8B2200164C8E /* HomeStoryboard.storyboard */; };
+		FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */; };
+		FDDE5F1E228D8E1600164C8E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F1D228D8E1600164C8E /* HomeViewController.swift */; };
+		FDDE5F20228D997F00164C8E /* EnumTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F1F228D997F00164C8E /* EnumTables.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		FD9CFB4922846DBE002EBADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDDE5F17228AFB9700164C8E /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		FDDE5F19228D8B2200164C8E /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
+		FDDE5F1D228D8E1600164C8E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FDDE5F1F228D997F00164C8E /* EnumTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,9 @@
 				FD9CFB2E22846DBE002EBADB /* Assets.xcassets */,
 				FD9CFB3022846DBE002EBADB /* LaunchScreen.storyboard */,
 				FD9CFB3322846DBE002EBADB /* Info.plist */,
+				FDDE5F19228D8B2200164C8E /* HomeStoryboard.storyboard */,
+				FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */,
+				FDDE5F1D228D8E1600164C8E /* HomeViewController.swift */,
 			);
 			path = MaePlanejaCliente;
 			sourceTree = "<group>";
@@ -175,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				FDDE5F17228AFB9700164C8E /* Produto.swift */,
+				FDDE5F1F228D997F00164C8E /* EnumTables.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -291,6 +303,7 @@
 				FD9CFB5622846E88002EBADB /* GoogleService-Info.plist in Resources */,
 				FD9CFB2F22846DBE002EBADB /* Assets.xcassets in Resources */,
 				FD9CFB2D22846DBD002EBADB /* Main.storyboard in Resources */,
+				FDDE5F1A228D8B2200164C8E /* HomeStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,9 +425,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDDE5F1E228D8E1600164C8E /* HomeViewController.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
+				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
 				FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */,
+				FDDE5F20228D997F00164C8E /* EnumTables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
