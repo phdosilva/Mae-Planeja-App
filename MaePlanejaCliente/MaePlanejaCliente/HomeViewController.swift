@@ -10,9 +10,8 @@ import UIKit
 import FirebaseDatabase
 
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var produtoTableView: UITableView!
+class HomeViewController: UIViewController{
+/*
     var produtosList:[Produto] = []
     
     override func viewDidLoad() {
@@ -84,5 +83,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
         dataTask.resume()
     }
-        
+        */
 }
