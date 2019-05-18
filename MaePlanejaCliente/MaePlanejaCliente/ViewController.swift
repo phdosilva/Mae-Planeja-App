@@ -12,8 +12,11 @@ import FirebaseStorage
 
 import NavigationDrawer
 
-class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class ViewController: UIViewController, UIViewControllerTransitioningDelegate, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var produtoTableView: UITableView!
+    
+    var produtosList:[Produto] = []
     let interactor = Interactor()
     
     override func viewDidLoad() {
@@ -21,18 +24,71 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         //populate()
         //populateLoja()
         //popularEndereco()
-        popularCliente()
+       // popularCliente()
+        self.produtoTableView.dataSource  = self
+        self.produtoTableView.delegate = self
+        let produtoRef = Database.database().reference().child(EnumTables.Produto.rawValue)
+        produtoRef.observe(.value) { (snap) in
+            if snap.childrenCount > 0 {
+                self.produtosList.removeAll()
+                for produtos in snap.children.allObjects as! [DataSnapshot]{
+                    let produtoObject = produtos.value as? [String: AnyObject]
+                    let produtoNome = produtoObject?["nome_item"]
+                    let produtoImagem = produtoObject?["imagem"]
+                    //let produtoImagens = produtoObject?["imagens"]
+                    let produtoMes = produtoObject?["mes"]
+                    let produtoPreco = produtoObject?["preco"]
+                    
+                    let produto = Produto(nome_item: produtoNome as? String , preco: produtoPreco as? String,
+                                          imagem: produtoImagem as? String,
+                                          mes: produtoMes as? String, imagens: [""] )
+                    self.produtosList.append(produto)
+                }
+            }
+            self.produtoTableView.reloadData()
+        }
     }
     
-    func populateLoja() {
-        let ref = Database.database().reference()
-        let lojaRef = ref.child("Loja")
-        let key = lojaRef.childByAutoId().key
-        let item = ["nome":"teste", "outro_item": "2"]
-        
-        lojaRef.child(key!).setValue(item)
-        print("foi")
+    /** TableView **/
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(produtosList.count)
+        return produtosList.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProdutosTableViewCell") as! ProdutosTableViewCell
+        let produto = produtosList[indexPath.row]
+        cell.descProdutoTextView.text = produto.nome_item
+        downloadImage(url: produto.imagem ?? "", downloadImageView: cell.produtoImageView)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    @objc func downloadImage(url:String,downloadImageView:UIImageView) {
+        let imageURL = URL(string:url)!
+        
+        let dataTask = URLSession.shared.dataTask(with: imageURL) {
+            (data, reponse, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    downloadImageView.image = UIImage(data: data)
+                }
+            }
+        }
+        
+        dataTask.resume()
+    }
+    
     
     /* ----- MENU ----- */
     
@@ -76,6 +132,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         return interactor.hasStarted ? interactor : nil
     }
     
+    
+    
     /* ----- MENU ----- */
     
     func populate(){
@@ -116,9 +174,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
         }
     }
     
-    func popularLoja() {
-        
-    }
+   
     
     func popularCliente() {
         let ref = Database.database().reference()
@@ -134,6 +190,19 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate {
             lojaRef.child(key!).setValue(aux)
         }
     }
+    
+    
+    //ajustar
+    func popularLoja() {
+        let ref = Database.database().reference()
+        let lojaRef = ref.child("Loja")
+        let key = lojaRef.childByAutoId().key
+        let item = ["nome":"teste", "outro_item": "2"]
+        
+        lojaRef.child(key!).setValue(item)
+        print("foi")
+    }
+    
 
 }
 
