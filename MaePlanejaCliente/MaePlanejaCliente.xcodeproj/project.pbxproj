@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		25C667EA228DF1F300134C9E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25C667E9228DF1F300134C9E /* GoogleService-Info.plist */; };
 		25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C667EB228DF70E00134C9E /* SlidingViewController.swift */; };
+		3F06702D228D9C41002A0535 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F06702C228D9C41002A0535 /* GoogleService-Info.plist */; };
+		3F06702F228DA903002A0535 /* Loja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06702E228DA903002A0535 /* Loja.swift */; };
+		3F06703122904572002A0535 /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703022904572002A0535 /* Endereco.swift */; };
+		3F06703322904B9C002A0535 /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703222904B9C002A0535 /* Cliente.swift */; };
+		3F06703522904FD2002A0535 /* Enuns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703422904FD2002A0535 /* Enuns.swift */; };
 		9EC1D366DDF6FD66FEFCFC52 /* Pods_MaePlanejaCliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
@@ -44,8 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25C667E9228DF1F300134C9E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		25C667EB228DF70E00134C9E /* SlidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingViewController.swift; sourceTree = "<group>"; };
+		3F06702C228D9C41002A0535 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F06702E228DA903002A0535 /* Loja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loja.swift; sourceTree = "<group>"; };
+		3F06703022904572002A0535 /* Endereco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
+		3F06703222904B9C002A0535 /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
+		3F06703422904FD2002A0535 /* Enuns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enuns.swift; sourceTree = "<group>"; };
 		6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaCliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D259E482BAB8C163C6910A8 /* Pods-MaePlanejaClienteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteTests.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteTests/Pods-MaePlanejaClienteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -153,8 +161,8 @@
 			children = (
 				FDDE5F16228AFB6F00164C8E /* Models */,
 				FD9CFB2722846DBD002EBADB /* AppDelegate.swift */,
-				25C667E9228DF1F300134C9E /* GoogleService-Info.plist */,
 				FD9CFB2922846DBD002EBADB /* ViewController.swift */,
+				3F06702C228D9C41002A0535 /* GoogleService-Info.plist */,
 				FD9CFB2B22846DBD002EBADB /* Main.storyboard */,
 				FD9CFB2E22846DBE002EBADB /* Assets.xcassets */,
 				FD9CFB3022846DBE002EBADB /* LaunchScreen.storyboard */,
@@ -190,6 +198,10 @@
 			children = (
 				FDDE5F17228AFB9700164C8E /* Produto.swift */,
 				FDDE5F1F228D997F00164C8E /* EnumTables.swift */,
+				3F06702E228DA903002A0535 /* Loja.swift */,
+				3F06703022904572002A0535 /* Endereco.swift */,
+				3F06703222904B9C002A0535 /* Cliente.swift */,
+				3F06703422904FD2002A0535 /* Enuns.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -303,8 +315,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9CFB3222846DBE002EBADB /* LaunchScreen.storyboard in Resources */,
+				3F06702D228D9C41002A0535 /* GoogleService-Info.plist in Resources */,
 				FD9CFB2F22846DBE002EBADB /* Assets.xcassets in Resources */,
-				25C667EA228DF1F300134C9E /* GoogleService-Info.plist in Resources */,
 				FD9CFB2D22846DBD002EBADB /* Main.storyboard in Resources */,
 				FDDE5F1A228D8B2200164C8E /* HomeStoryboard.storyboard in Resources */,
 			);
@@ -431,9 +443,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDDE5F1E228D8E1600164C8E /* HomeViewController.swift in Sources */,
+				3F06703522904FD2002A0535 /* Enuns.swift in Sources */,
+				3F06703122904572002A0535 /* Endereco.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
 				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,
 				25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */,
+				3F06703322904B9C002A0535 /* Cliente.swift in Sources */,
+				3F06702F228DA903002A0535 /* Loja.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
 				FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */,
 				FDDE5F20228D997F00164C8E /* EnumTables.swift in Sources */,
