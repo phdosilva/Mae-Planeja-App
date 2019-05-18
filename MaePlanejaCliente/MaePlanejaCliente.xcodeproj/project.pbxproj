@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F06702D228D9C41002A0535 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F06702C228D9C41002A0535 /* GoogleService-Info.plist */; };
+		3F06702F228DA903002A0535 /* Loja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06702E228DA903002A0535 /* Loja.swift */; };
+		3F06703122904572002A0535 /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703022904572002A0535 /* Endereco.swift */; };
+		3F06703322904B9C002A0535 /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703222904B9C002A0535 /* Cliente.swift */; };
+		3F06703522904FD2002A0535 /* Enuns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703422904FD2002A0535 /* Enuns.swift */; };
 		9EC1D366DDF6FD66FEFCFC52 /* Pods_MaePlanejaCliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
@@ -17,7 +22,6 @@
 		FD9CFB3222846DBE002EBADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9CFB3022846DBE002EBADB /* LaunchScreen.storyboard */; };
 		FD9CFB3D22846DBE002EBADB /* MaePlanejaClienteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB3C22846DBE002EBADB /* MaePlanejaClienteTests.swift */; };
 		FD9CFB4822846DBE002EBADB /* MaePlanejaClienteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */; };
-		FD9CFB5622846E88002EBADB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */; };
 		FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F17228AFB9700164C8E /* Produto.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F06702C228D9C41002A0535 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3F06702E228DA903002A0535 /* Loja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loja.swift; sourceTree = "<group>"; };
+		3F06703022904572002A0535 /* Endereco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
+		3F06703222904B9C002A0535 /* Cliente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
+		3F06703422904FD2002A0535 /* Enuns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enuns.swift; sourceTree = "<group>"; };
 		6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaCliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D259E482BAB8C163C6910A8 /* Pods-MaePlanejaClienteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteTests.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteTests/Pods-MaePlanejaClienteTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,7 +70,6 @@
 		FD9CFB4322846DBE002EBADB /* MaePlanejaClienteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaePlanejaClienteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaePlanejaClienteUITests.swift; sourceTree = "<group>"; };
 		FD9CFB4922846DBE002EBADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDDE5F17228AFB9700164C8E /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,9 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				FDDE5F16228AFB6F00164C8E /* Models */,
-				FD9CFB5522846E88002EBADB /* GoogleService-Info.plist */,
 				FD9CFB2722846DBD002EBADB /* AppDelegate.swift */,
 				FD9CFB2922846DBD002EBADB /* ViewController.swift */,
+				3F06702C228D9C41002A0535 /* GoogleService-Info.plist */,
 				FD9CFB2B22846DBD002EBADB /* Main.storyboard */,
 				FD9CFB2E22846DBE002EBADB /* Assets.xcassets */,
 				FD9CFB3022846DBE002EBADB /* LaunchScreen.storyboard */,
@@ -175,6 +183,10 @@
 			isa = PBXGroup;
 			children = (
 				FDDE5F17228AFB9700164C8E /* Produto.swift */,
+				3F06702E228DA903002A0535 /* Loja.swift */,
+				3F06703022904572002A0535 /* Endereco.swift */,
+				3F06703222904B9C002A0535 /* Cliente.swift */,
+				3F06703422904FD2002A0535 /* Enuns.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -288,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD9CFB3222846DBE002EBADB /* LaunchScreen.storyboard in Resources */,
-				FD9CFB5622846E88002EBADB /* GoogleService-Info.plist in Resources */,
+				3F06702D228D9C41002A0535 /* GoogleService-Info.plist in Resources */,
 				FD9CFB2F22846DBE002EBADB /* Assets.xcassets in Resources */,
 				FD9CFB2D22846DBD002EBADB /* Main.storyboard in Resources */,
 			);
@@ -412,7 +424,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F06703522904FD2002A0535 /* Enuns.swift in Sources */,
+				3F06703122904572002A0535 /* Endereco.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
+				3F06703322904B9C002A0535 /* Cliente.swift in Sources */,
+				3F06702F228DA903002A0535 /* Loja.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
 				FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */,
 			);

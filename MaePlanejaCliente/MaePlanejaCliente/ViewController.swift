@@ -16,7 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     
         //populate()
+        //populateLoja()
+        //popularEndereco()
+        popularCliente()
+    }
     
+    func populateLoja() {
+        let ref = Database.database().reference()
+        let lojaRef = ref.child("Loja")
+        let key = lojaRef.childByAutoId().key
+        let item = ["nome":"teste", "outro_item": "2"]
+        
+        lojaRef.child(key!).setValue(item)
+        print("foi")
     }
     
     func populate(){
@@ -40,6 +52,40 @@ class ViewController: UIViewController {
         }
     }
 
+    func popularEndereco()
+    {
+        let ref = Database.database().reference()
+        let lojaRef = ref.child("Endereco")
+        
+        let itens = [
+            Endereco(rua: "rua" , bairro: "bairro", cep: "cep", numero: "123")
+        ]
+        
+        for item in itens {
+            let key = lojaRef.childByAutoId().key
+            lojaRef.child(key!).setValue(["rua": item.rua, "bairro": item.bairro, "CEP": item.cep, "numero": item.numero])
+            lojaRef.child(key!).set
+        }
+    }
+    
+    func popularLoja() {
+        
+    }
+    
+    func popularCliente() {
+        let ref = Database.database().reference()
+        let lojaRef = ref.child("Usuario")
+        
+        let pessoas = [
+            Cliente(sexoBb: Sexo.feminino.rawValue, mesesGestacao: "9")
+        ]
+        
+        for pessoa in pessoas {
+            let key = lojaRef.childByAutoId().key
+            let aux = ["sexoBB": pessoa.sexoBb, "mesesGestacao": pessoa.mesesGestacao]
+            lojaRef.child(key!).setValue(aux)
+        }
+    }
 
 }
 

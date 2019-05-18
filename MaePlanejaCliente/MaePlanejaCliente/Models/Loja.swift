@@ -8,4 +8,14 @@
 
 import Foundation
 
-class {
+class Loja {
+    let nome:String?
+    let endereco:Endereco?
+    var produtos:[Produto]?
+    
+    init(nome:String, endereco:Endereco, produtos:[Produto]) {
+        self.nome = nome
+        self.endereco = endereco
+        self.produtos = produtos
+    }
+}

@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class Endereco {
+    let rua:String
+    let bairro:String
+    let cep:String
+    let numero:String
+    
+    init(rua:String,
+    bairro:String,
+    cep:String,
+    numero:String) {
+        self.rua = rua
+        self.bairro = bairro
+        self.cep = cep
+        self.numero = numero
+    }
+}
+
