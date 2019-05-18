@@ -112,7 +112,7 @@
                             <outletCollection property="gestureRecognizers" destination="4cf-Ai-26H" appends="YES" id="QnC-1q-JP2"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="7es-L5-zyB">
+                    <navigationItem key="navigationItem" id="7es-L5-zyB" colorLabel="IBBuiltInLabel-Blue">
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="TIo-5D-ISL">
                             <connections>
                                 <segue destination="3fU-ce-yId" kind="presentation" identifier="showSlidingMenu" id="B0t-Q0-X3B"/>
