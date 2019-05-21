@@ -15,6 +15,8 @@
 		3F06703522904FD2002A0535 /* Enuns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F06703422904FD2002A0535 /* Enuns.swift */; };
 		3F067037229078A7002A0535 /* ProdutosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F067036229078A7002A0535 /* ProdutosTableViewCell.swift */; };
 		9EC1D366DDF6FD66FEFCFC52 /* Pods_MaePlanejaCliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */; };
+		A0484F14229373850025B51D /* DadosFinaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F13229373850025B51D /* DadosFinaisViewController.swift */; };
+		A0484F1622937DFF0025B51D /* ProdutosFinaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F1522937DFF0025B51D /* ProdutosFinaisTableViewCell.swift */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
 		FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB2722846DBD002EBADB /* AppDelegate.swift */; };
@@ -59,6 +61,8 @@
 		6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaCliente.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D259E482BAB8C163C6910A8 /* Pods-MaePlanejaClienteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteTests.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteTests/Pods-MaePlanejaClienteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0484F13229373850025B51D /* DadosFinaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosFinaisViewController.swift; sourceTree = "<group>"; };
+		A0484F1522937DFF0025B51D /* ProdutosFinaisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutosFinaisTableViewCell.swift; sourceTree = "<group>"; };
 		A62DAEBE32E4179BE5359C05 /* Pods-MaePlanejaClienteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteUITests.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteUITests/Pods-MaePlanejaClienteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA795CF316A11EE10C905326 /* Pods-MaePlanejaClienteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteTests.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteTests/Pods-MaePlanejaClienteTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				3F067036229078A7002A0535 /* ProdutosTableViewCell.swift */,
+				A0484F1522937DFF0025B51D /* ProdutosFinaisTableViewCell.swift */,
 			);
 			name = TableViews;
 			path = TableViewa;
@@ -183,6 +188,7 @@
 				FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */,
 				FDDE5F1D228D8E1600164C8E /* HomeViewController.swift */,
 				25C667EB228DF70E00134C9E /* SlidingViewController.swift */,
+				A0484F13229373850025B51D /* DadosFinaisViewController.swift */,
 			);
 			path = MaePlanejaCliente;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				FDDE5F1E228D8E1600164C8E /* HomeViewController.swift in Sources */,
 				3F06703522904FD2002A0535 /* Enuns.swift in Sources */,
 				3F06703122904572002A0535 /* Endereco.swift in Sources */,
+				A0484F14229373850025B51D /* DadosFinaisViewController.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
 				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,
 				3F067037229078A7002A0535 /* ProdutosTableViewCell.swift in Sources */,
@@ -464,6 +471,7 @@
 				3F06703322904B9C002A0535 /* Cliente.swift in Sources */,
 				3F06702F228DA903002A0535 /* Loja.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
+				A0484F1622937DFF0025B51D /* ProdutosFinaisTableViewCell.swift in Sources */,
 				FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */,
 				FDDE5F20228D997F00164C8E /* EnumTables.swift in Sources */,
 			);
