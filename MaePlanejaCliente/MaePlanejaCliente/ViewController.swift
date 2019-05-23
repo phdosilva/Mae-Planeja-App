@@ -15,8 +15,11 @@ import NavigationDrawer
 class ViewController: UIViewController, UIViewControllerTransitioningDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var produtoTableView: UITableView!
+    @IBOutlet weak var filterButton: UIButton!
+    
     
     var produtosList:[Produto] = []
+    var produtosListFinal: [Produto] = []
     let interactor = Interactor()
     
     override func viewDidLoad() {
@@ -66,7 +69,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 140
     }
     
     @objc func downloadImage(url:String,downloadImageView:UIImageView) {
@@ -113,7 +116,13 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         if let destinationViewController = segue.destination as? SlidingViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = self.interactor
+        }else if let destinationViewController = segue.destination as? ProdutoDetalhesViewController {
+            destinationViewController.produto = sender as? Produto
         }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let produto = produtosList[indexPath.row]
+        self.performSegue(withIdentifier: "showProduto", sender: produto)
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -132,7 +141,42 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         return interactor.hasStarted ? interactor : nil
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = deleteAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = AddAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .destructive, title: "Remover") { (action, view, completion) in
+            self.produtosListFinal.remove(at: indexPath.row)
+            //self.produtoTableView.deleteRows(at: [indexPath], with: .right)
+            completion(true)
+        }
+
+        action.image = #imageLiteral(resourceName: "cancelar")
+        action.backgroundColor = .red
+
+        return action
+    }
+    
+    func AddAction(at indexPath: IndexPath) -> UIContextualAction {
+        let action = UIContextualAction(style: .normal, title: "Adicionar") { (action, view, completion) in
+            self.produtosListFinal.append(self.produtosList[indexPath.row])
+            print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
+            
+            completion(true)
+        }
+        
+        action.image = #imageLiteral(resourceName: "adicionar")
+        action.backgroundColor = .green
+        
+        return action
+    }
     
     /* ----- MENU ----- */
     

@@ -19,6 +19,8 @@
 		A0484F1622937DFF0025B51D /* ProdutosFinaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F1522937DFF0025B51D /* ProdutosFinaisTableViewCell.swift */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
+		FD8056DE2296D18200FFCFCE /* ProdutoDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */; };
+		FD8056E02296D3C200FFCFCE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD8056DF2296D3C200FFCFCE /* Colors.xcassets */; };
 		FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB2722846DBD002EBADB /* AppDelegate.swift */; };
 		FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB2922846DBD002EBADB /* ViewController.swift */; };
 		FD9CFB2D22846DBD002EBADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD9CFB2B22846DBD002EBADB /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		DA7E0718831C6D3B920B1651 /* Pods-MaePlanejaCliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaCliente.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente.debug.xcconfig"; sourceTree = "<group>"; };
 		EA55D8226EC57E7156CAAD9E /* Pods-MaePlanejaCliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaCliente.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente.release.xcconfig"; sourceTree = "<group>"; };
 		EAB2D5541BD0982BA2C9FBB1 /* Pods-MaePlanejaClienteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteUITests.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteUITests/Pods-MaePlanejaClienteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoDetalhesViewController.swift; sourceTree = "<group>"; };
+		FD8056DF2296D3C200FFCFCE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = Assets.xcassets/Colors.xcassets; sourceTree = "<group>"; };
 		FD9CFB2422846DBD002EBADB /* MaePlanejaCliente.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaePlanejaCliente.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD9CFB2722846DBD002EBADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD9CFB2922846DBD002EBADB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				3F06702C228D9C41002A0535 /* GoogleService-Info.plist */,
 				FD9CFB2B22846DBD002EBADB /* Main.storyboard */,
 				FD9CFB2E22846DBE002EBADB /* Assets.xcassets */,
+				FD8056DF2296D3C200FFCFCE /* Colors.xcassets */,
 				FD9CFB3022846DBE002EBADB /* LaunchScreen.storyboard */,
 				FD9CFB3322846DBE002EBADB /* Info.plist */,
 				FDDE5F19228D8B2200164C8E /* HomeStoryboard.storyboard */,
@@ -189,6 +194,7 @@
 				FDDE5F1D228D8E1600164C8E /* HomeViewController.swift */,
 				25C667EB228DF70E00134C9E /* SlidingViewController.swift */,
 				A0484F13229373850025B51D /* DadosFinaisViewController.swift */,
+				FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */,
 			);
 			path = MaePlanejaCliente;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				FD9CFB3222846DBE002EBADB /* LaunchScreen.storyboard in Resources */,
 				3F06702D228D9C41002A0535 /* GoogleService-Info.plist in Resources */,
 				FD9CFB2F22846DBE002EBADB /* Assets.xcassets in Resources */,
+				FD8056E02296D3C200FFCFCE /* Colors.xcassets in Resources */,
 				FD9CFB2D22846DBD002EBADB /* Main.storyboard in Resources */,
 				FDDE5F1A228D8B2200164C8E /* HomeStoryboard.storyboard in Resources */,
 			);
@@ -468,6 +475,7 @@
 				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,
 				3F067037229078A7002A0535 /* ProdutosTableViewCell.swift in Sources */,
 				25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */,
+				FD8056DE2296D18200FFCFCE /* ProdutoDetalhesViewController.swift in Sources */,
 				3F06703322904B9C002A0535 /* Cliente.swift in Sources */,
 				3F06702F228DA903002A0535 /* Loja.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,
