@@ -14,7 +14,7 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
     var produtos:[Produto] = []
     
 
-    func populate() {
+    func hard_populate() {
         let imgs = ["img01","img02","img03"]
         produtos = [
             Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "https://firebasestorage.googleapis.com/v0/b/maeplaneja.appspot.com/o/fraldadescartavel.jpg?alt=media&token=29488770-8584-4c4b-8b7c-5a85ce366fa1", mes: "3",imagens:imgs),
@@ -23,6 +23,14 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
             Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "https://firebasestorage.googleapis.com/v0/b/maeplaneja.appspot.com/o/berco.jpg?alt=media&token=468685fc-0163-411e-a78f-3807c927f342", mes: "6",imagens:imgs),
             Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "https://firebasestorage.googleapis.com/v0/b/maeplaneja.appspot.com/o/comoda.jpg?alt=media&token=203dfc0b-b4de-458b-8a70-2f181ac6ca90", mes: "6",imagens:imgs),
             ]
+    }
+    
+    func populate() {
+        if let produtosPref = Produto.getProdutos() {
+            self.produtos = produtosPref
+        }
+        
+        //self.produtos = Produto.getProdutos()
     }
     
     override func viewDidLoad() {

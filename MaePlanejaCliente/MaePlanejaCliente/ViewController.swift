@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     var produtosList:[Produto] = []
     var produtosListFinal: [Produto] = []
     let interactor = Interactor()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         //populate()
@@ -113,6 +113,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                 self.performSegue(withIdentifier: "showSlidingMenu", sender: nil)
         }
     }
+    
+    @IBAction func finalizar(_ sender: Any) {
+        print(produtosListFinal.count)
+        Produto.save(itens: produtosListFinal)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? SlidingViewController {
