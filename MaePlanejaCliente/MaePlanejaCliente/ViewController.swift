@@ -44,7 +44,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                     
                     let produto = Produto(nome_item: produtoNome as? String , preco: produtoPreco as? String,
                                           imagem: produtoImagem as? String,
-                                          mes: produtoMes as? String, imagens: [""] )
+                                          mes: produtoMes as? String, imagens: [""])
                     self.produtosList.append(produto)
                 }
             }
@@ -71,6 +71,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
+    
+    
     
     @objc func downloadImage(url:String,downloadImageView:UIImageView) {
         let imageURL = URL(string:url)!
