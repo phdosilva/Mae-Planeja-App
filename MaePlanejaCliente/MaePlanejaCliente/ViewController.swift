@@ -165,14 +165,18 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
-        let action = UIContextualAction(style: .destructive, title: "Remover") { (action, view, completion) in
+        let action = UIContextualAction(style: .normal, title: "Remover") { (action, view, completion) in
             if self.produtosListFinal.contains(self.produtosList[indexPath.row]){
-                self.produtosListFinal.index(of: self.produtosList[indexPath.row]).map{_ in self.produtosListFinal.remove(at: indexPath.row)
-                 print("Excluído!")
+                if let index = self.produtosListFinal.index(of: self.produtosList[indexPath.row]){
+                    self.produtosListFinal.remove(at: index)
+                    if let valorT = self.produtosList[indexPath.row].preco{
+                        self.decTotal(valor: valorT)
+                        print("Excluído!")
+                    }
                 }
             }
             //self.produtoTableView.deleteRows(at: [indexPath], with: .right)
-            completion(false)
+            completion(true)
         }
 
         action.image = #imageLiteral(resourceName: "cancelar")
@@ -198,8 +202,31 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     func incTotal(valor: String){
-        //let value = valor.index
+        if let val = getValue(valor: valor),let valorT = self.valorTotal.text, let val2 = getValue(valor:valorT){
+            let total = val + val2
+            let texto = "R$ " + String(total).replace(target: ".", withString: ",")
+            self.valorTotal.text = texto
+            print("T \(texto)")
+        }
+
     }
+    
+    func decTotal(valor: String){
+        if let val = getValue(valor: valor),let valorT = self.valorTotal.text, let val2 = getValue(valor:valorT){
+            let total = val2 - val
+            let texto = "R$ " + String(total).replace(target: ".", withString: ",")
+            self.valorTotal.text = texto
+            print("T \(texto)")
+        }
+    }
+    
+    func getValue(valor: String) -> Double?{
+        let index = valor.index(valor.startIndex, offsetBy: 3)
+        let value = valor[index...]
+        let valString = String(value).replace(target: ",", withString: ".")
+        return valString.toDouble()
+    }
+    
     
     /* ----- MENU ----- */
     
@@ -272,4 +299,19 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
 
 }
-
+extension String
+{
+    func replace(target: String, withString: String) -> String
+    {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
+    func toDouble() -> Double {
+        if let unwrappedNum = Double(self) {
+            return unwrappedNum
+        } else {
+            // Handle a bad number
+            print("Error converting \"" + self + "\" to Double")
+            return 0.0
+        }
+    }
+}
