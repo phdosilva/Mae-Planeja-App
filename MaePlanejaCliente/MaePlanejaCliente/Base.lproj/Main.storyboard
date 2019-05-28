@@ -168,8 +168,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-D2-V0Z">
                                 <rect key="frame" x="0.0" y="64" width="375" height="75"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 meses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If1-7X-Win">
-                                        <rect key="frame" x="155" y="17.5" width="65.5" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPN-27-0lT">
+                                        <rect key="frame" x="313" y="17" width="40" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" image="filter"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Valor: R$ 00,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGm-fI-hQh">
+                                        <rect key="frame" x="5" y="25" width="129" height="30"/>
+                                        <color key="backgroundColor" name="ColorBlue"/>
+                                        <color key="tintColor" name="Color"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="ColorGray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="4 meses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If1-7X-Win">
+                                        <rect key="frame" x="164" y="17" width="65.5" height="40"/>
                                         <color key="backgroundColor" name="ColorGray"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="1qs-YC-Hgh"/>
@@ -178,20 +191,19 @@
                                         <color key="textColor" red="0.088093113616144261" green="0.33888589924507762" blue="0.32035379689188964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPN-27-0lT">
-                                        <rect key="frame" x="313" y="17" width="40" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="filter"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" name="ColorGray"/>
                                 <constraints>
                                     <constraint firstItem="HPN-27-0lT" firstAttribute="top" secondItem="QT5-D2-V0Z" secondAttribute="top" constant="17" id="1J9-4x-vBY"/>
                                     <constraint firstAttribute="height" constant="75" id="9re-MK-yYw"/>
+                                    <constraint firstItem="oGm-fI-hQh" firstAttribute="leading" secondItem="QT5-D2-V0Z" secondAttribute="leading" constant="12" id="Sl7-Tl-mju"/>
+                                    <constraint firstAttribute="bottom" secondItem="oGm-fI-hQh" secondAttribute="bottom" constant="27" id="SvN-Gt-nqx"/>
+                                    <constraint firstAttribute="trailing" secondItem="oGm-fI-hQh" secondAttribute="trailing" constant="234" id="UIA-ZW-TpA"/>
                                     <constraint firstAttribute="trailing" secondItem="HPN-27-0lT" secondAttribute="trailing" constant="22" id="dD1-Ru-ogB"/>
                                     <constraint firstItem="If1-7X-Win" firstAttribute="centerY" secondItem="QT5-D2-V0Z" secondAttribute="centerY" id="i7q-rE-QEK"/>
                                     <constraint firstItem="If1-7X-Win" firstAttribute="centerX" secondItem="QT5-D2-V0Z" secondAttribute="centerX" id="kn3-4v-aNQ"/>
                                     <constraint firstAttribute="bottom" secondItem="HPN-27-0lT" secondAttribute="bottom" constant="18" id="oP4-6n-cAp"/>
+                                    <constraint firstItem="oGm-fI-hQh" firstAttribute="top" secondItem="QT5-D2-V0Z" secondAttribute="top" constant="27" id="ynH-uB-EPx"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0gq-cr-E7w">
@@ -303,6 +315,7 @@
                     <connections>
                         <outlet property="filterButton" destination="HPN-27-0lT" id="xXI-m8-fmR"/>
                         <outlet property="produtoTableView" destination="0gq-cr-E7w" id="iKm-om-8mk"/>
+                        <outlet property="valorTotal" destination="oGm-fI-hQh" id="GZJ-br-CmR"/>
                         <segue destination="xNm-uz-Jzk" kind="show" identifier="showProduto" id="UEw-bq-TBq"/>
                     </connections>
                 </viewController>

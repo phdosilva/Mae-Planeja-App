@@ -16,6 +16,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     @IBOutlet var produtoTableView: UITableView!
     @IBOutlet weak var filterButton: UIButton!
+    @IBOutlet weak var valorTotal: UILabel!
     
     
     var produtosList:[Produto] = []
@@ -159,8 +160,8 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = AddAction(at: indexPath)
-        return UISwipeActionsConfiguration(actions: [delete])
+        let add = AddAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [add])
     }
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
@@ -185,6 +186,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
              if !self.produtosListFinal.contains(self.produtosList[indexPath.row]){
                 self.produtosListFinal.append(self.produtosList[indexPath.row])
                 print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
+                self.incTotal(valor: self.produtosList[indexPath.row].preco ?? "20")
             }
             completion(true)
         }
@@ -195,29 +197,33 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         return action
     }
     
+    func incTotal(valor: String){
+        //let value = valor.index
+    }
+    
     /* ----- MENU ----- */
     
-//    func populate(){
-//        let ref: DatabaseReference! = Database.database().reference()
-//        let produtoRef = ref.child("Produto")
-//        let imgs = ["img01","img02","img03"]
-//        let produtos = [Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "", mes: "3",imagens:imgs),
-//                        Produto(nome_item: "Carrinho de bebê", preco: "R$ 350,00", imagem: "", mes: "6",imagens:imgs),
-//                        Produto(nome_item: "Mamadeira", preco: "R$ 15,00", imagem: "", mes: "5",imagens:imgs),
-//                        Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "", mes: "6",imagens:imgs),
-//                        Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "", mes: "6",imagens:imgs),
-//                        Produto(nome_item: "Macacão", preco: "R$ 20,00", imagem: "", mes: "5",imagens:imgs),
-//                        Produto(nome_item: "Fralda de pano", preco: "R$ 5,00", imagem: "", mes: "5",imagens:imgs),
-//                        Produto(nome_item: "Pano umidecido", preco: "R$ 10,00", imagem: "", mes: "5",imagens:imgs),
-//                        Produto(nome_item: "Banheira", preco: "R$ 350,00", imagem: "", mes: "5",imagens:imgs),
-//                        Produto(nome_item: "Pote de leite", preco: "R$ 5,00", imagem: "", mes: "7",imagens:imgs)]
-//       
-//        for produto in produtos{
-//            let key = produtoRef.childByAutoId().key
-//            let prod = ["nome_item":produto.nome_item,"preco":produto.preco,"imagem": produto.imagem,"mes":produto.mes]
-//            produtoRef.child(key!).setValue(prod)
-//        }
-//    }
+    func populate(){
+        let ref: DatabaseReference! = Database.database().reference()
+        let produtoRef = ref.child(EnumTables.ProdutoLoja.rawValue)
+        let imgs = ["img01","img02","img03"]
+        let produtos = [Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "img01", mes: "3",imagens:imgs,nome_loja: "",recomendacao: ""),
+                        Produto(nome_item: "Carrinho de bebê", preco: "R$ 350,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Mamadeira", preco: "R$ 15,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Macacão", preco: "R$ 20,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Fralda de pano", preco: "R$ 5,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Pano umidecido", preco: "R$ 10,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Banheira", preco: "R$ 350,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+                        Produto(nome_item: "Pote de leite", preco: "R$ 5,00", imagem: "img01", mes: "7",imagens:imgs,nome_loja: "tes",recomendacao: "1")]
+
+        for produto in produtos{
+            let key = produtoRef.childByAutoId().key
+            let prod = ["nome_item":produto.nome_item ?? "nome","preco":produto.preco ?? "R$100,00","imagem": produto.imagem ?? "img","mes":produto.mes ?? "3","imagens":produto.imagens,"nome_loja":produto.nome_loja ?? "Loja","recomendacao":produto.recomendacao ?? "1"] as [String : Any]
+            produtoRef.child(key!).setValue(prod)
+        }
+    }
 
     func popularEndereco()
     {
