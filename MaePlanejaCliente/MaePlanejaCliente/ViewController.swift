@@ -165,9 +165,13 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .destructive, title: "Remover") { (action, view, completion) in
-            self.produtosListFinal.remove(at: indexPath.row)
+            if self.produtosListFinal.contains(self.produtosList[indexPath.row]){
+                self.produtosListFinal.index(of: self.produtosList[indexPath.row]).map{_ in self.produtosListFinal.remove(at: indexPath.row)
+                 print("Excluído!")
+                }
+            }
             //self.produtoTableView.deleteRows(at: [indexPath], with: .right)
-            completion(true)
+            completion(false)
         }
 
         action.image = #imageLiteral(resourceName: "cancelar")
@@ -178,9 +182,10 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     func AddAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Adicionar") { (action, view, completion) in
-            self.produtosListFinal.append(self.produtosList[indexPath.row])
-            print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
-            
+             if !self.produtosListFinal.contains(self.produtosList[indexPath.row]){
+                self.produtosListFinal.append(self.produtosList[indexPath.row])
+                print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
+            }
             completion(true)
         }
         

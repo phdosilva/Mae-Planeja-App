@@ -10,6 +10,7 @@ import Foundation
 
 enum EnumTables : String {
     case Produto
+    case ProdutoLoja
     case Loja
 }
 

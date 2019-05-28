@@ -7,8 +7,8 @@
 //
 import UIKit
 import Foundation
-class Produto : Codable {
-    
+class Produto : Codable, Equatable {
+   
     var nome_item: String?
     var preco: String?
     var imagem: String?
@@ -60,5 +60,12 @@ class Produto : Codable {
           recomendacao = "Recomendado"
         }
         return recomendacao
+    }
+    
+    static func == (lhs: Produto, rhs: Produto) -> Bool {
+        if lhs.nome_item == rhs.nome_item{
+            return true
+        }
+        return false
     }
 }
