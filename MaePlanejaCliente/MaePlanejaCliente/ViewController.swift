@@ -31,7 +31,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         self.produtoTableView.dataSource  = self
         self.produtoTableView.delegate = self
         let produtoRef = Database.database().reference().child(EnumTables.Produto.rawValue)
-        produtoRef.observe(.value) { (snap) in
+        produtoRef.queryOrdered(byChild: "nome_loja").observe(.value) { (snap) in
             if snap.childrenCount > 0 {
                 self.produtosList.removeAll()
                 for produtos in snap.children.allObjects as! [DataSnapshot]{
@@ -41,10 +41,11 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                     //let produtoImagens = produtoObject?["imagens"]
                     let produtoMes = produtoObject?["mes"]
                     let produtoPreco = produtoObject?["preco"]
-                    
+                    let nomeLoja = produtoObject?["nome_loja"]
+                    let recomendacao = produtoObject?["recomendacao"]
                     let produto = Produto(nome_item: produtoNome as? String , preco: produtoPreco as? String,
                                           imagem: produtoImagem as? String,
-                                          mes: produtoMes as? String, imagens: [""])
+                                          mes: produtoMes as? String, imagens: [""],nome_loja: nomeLoja as? String, recomendacao: recomendacao as? String)
                     self.produtosList.append(produto)
                 }
             }
@@ -63,6 +64,9 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProdutosTableViewCell") as! ProdutosTableViewCell
         let produto = produtosList[indexPath.row]
         cell.descProdutoTextView.text = produto.nome_item
+        cell.precoTextView.text = produto.preco
+        cell.lojaTextView.text = produto.nome_loja
+        cell.recomendacaoTextView.text = Produto.getRecomendacao(nivel: produto.recomendacao ?? "Recomendado")
         downloadImage(url: produto.imagem ?? "", downloadImageView: cell.produtoImageView)
         
         return cell
@@ -188,27 +192,27 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     /* ----- MENU ----- */
     
-    func populate(){
-        let ref: DatabaseReference! = Database.database().reference()
-        let produtoRef = ref.child("Produto")
-        let imgs = ["img01","img02","img03"]
-        let produtos = [Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "", mes: "3",imagens:imgs),
-                        Produto(nome_item: "Carrinho de bebê", preco: "R$ 350,00", imagem: "", mes: "6",imagens:imgs),
-                        Produto(nome_item: "Mamadeira", preco: "R$ 15,00", imagem: "", mes: "5",imagens:imgs),
-                        Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "", mes: "6",imagens:imgs),
-                        Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "", mes: "6",imagens:imgs),
-                        Produto(nome_item: "Macacão", preco: "R$ 20,00", imagem: "", mes: "5",imagens:imgs),
-                        Produto(nome_item: "Fralda de pano", preco: "R$ 5,00", imagem: "", mes: "5",imagens:imgs),
-                        Produto(nome_item: "Pano umidecido", preco: "R$ 10,00", imagem: "", mes: "5",imagens:imgs),
-                        Produto(nome_item: "Banheira", preco: "R$ 350,00", imagem: "", mes: "5",imagens:imgs),
-                        Produto(nome_item: "Pote de leite", preco: "R$ 5,00", imagem: "", mes: "7",imagens:imgs)]
-       
-        for produto in produtos{
-            let key = produtoRef.childByAutoId().key
-            let prod = ["nome_item":produto.nome_item,"preco":produto.preco,"imagem": produto.imagem,"mes":produto.mes]
-            produtoRef.child(key!).setValue(prod)
-        }
-    }
+//    func populate(){
+//        let ref: DatabaseReference! = Database.database().reference()
+//        let produtoRef = ref.child("Produto")
+//        let imgs = ["img01","img02","img03"]
+//        let produtos = [Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "", mes: "3",imagens:imgs),
+//                        Produto(nome_item: "Carrinho de bebê", preco: "R$ 350,00", imagem: "", mes: "6",imagens:imgs),
+//                        Produto(nome_item: "Mamadeira", preco: "R$ 15,00", imagem: "", mes: "5",imagens:imgs),
+//                        Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "", mes: "6",imagens:imgs),
+//                        Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "", mes: "6",imagens:imgs),
+//                        Produto(nome_item: "Macacão", preco: "R$ 20,00", imagem: "", mes: "5",imagens:imgs),
+//                        Produto(nome_item: "Fralda de pano", preco: "R$ 5,00", imagem: "", mes: "5",imagens:imgs),
+//                        Produto(nome_item: "Pano umidecido", preco: "R$ 10,00", imagem: "", mes: "5",imagens:imgs),
+//                        Produto(nome_item: "Banheira", preco: "R$ 350,00", imagem: "", mes: "5",imagens:imgs),
+//                        Produto(nome_item: "Pote de leite", preco: "R$ 5,00", imagem: "", mes: "7",imagens:imgs)]
+//       
+//        for produto in produtos{
+//            let key = produtoRef.childByAutoId().key
+//            let prod = ["nome_item":produto.nome_item,"preco":produto.preco,"imagem": produto.imagem,"mes":produto.mes]
+//            produtoRef.child(key!).setValue(prod)
+//        }
+//    }
 
     func popularEndereco()
     {

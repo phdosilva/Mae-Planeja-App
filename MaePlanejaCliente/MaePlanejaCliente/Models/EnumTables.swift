@@ -12,3 +12,4 @@ enum EnumTables : String {
     case Produto
     case Loja
 }
+

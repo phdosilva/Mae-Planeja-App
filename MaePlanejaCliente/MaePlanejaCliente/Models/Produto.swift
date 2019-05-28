@@ -14,13 +14,17 @@ class Produto : Codable {
     var imagem: String?
     var imagens:[String]
     var mes: String?
+    var nome_loja: String?
+    var recomendacao: String?
     
-    init(nome_item: String?, preco: String?, imagem: String?,mes:String?,imagens:[String]){
+    init(nome_item: String?, preco: String?, imagem: String?,mes:String?,imagens:[String],nome_loja: String?,recomendacao: String?){
         self.nome_item = nome_item
         self.preco = preco
         self.imagem = imagem
         self.mes = mes
         self.imagens = imagens
+        self.nome_loja = nome_loja
+        self.recomendacao = recomendacao
     }
     
     static func save(itens:[Produto]) {
@@ -41,5 +45,20 @@ class Produto : Codable {
         }
         
         return nil
+    }
+    
+    static func getRecomendacao(nivel: String) -> String{
+        var recomendacao = ""
+        switch nivel {
+        case "1":
+          recomendacao = "Pouco Recomendado"
+        case "2":
+          recomendacao = "Recomendado"
+        case "3":
+          recomendacao = "Altamente Recomendado"
+        default:
+          recomendacao = "Recomendado"
+        }
+        return recomendacao
     }
 }
