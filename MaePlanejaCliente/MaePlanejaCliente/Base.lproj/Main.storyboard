@@ -244,6 +244,9 @@
                                         <rect key="frame" x="369" y="24" width="27" height="27"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="filter"/>
+                                        <connections>
+                                            <segue destination="Ofp-vy-77T" kind="show" id="E0I-0W-tVz"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: R$ 00,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGm-fI-hQh">
                                         <rect key="frame" x="18" y="22.5" width="125" height="30"/>
@@ -311,6 +314,9 @@
                                 <rect key="frame" x="367" y="8.5" width="27" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="lupa"/>
+                                <connections>
+                                    <segue destination="WDE-AU-Ywj" kind="show" identifier="showSearch" id="mIj-oa-GJK"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -470,6 +476,36 @@
             </objects>
             <point key="canvasLocation" x="2120" y="-556"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="whf-iu-wTr">
+            <objects>
+                <viewController id="Ofp-vy-77T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hsx-gf-M5w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="my3-Ol-QPz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9q-ei-JY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4378" y="-581"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="pmr-5W-Rg7">
+            <objects>
+                <viewController id="WDE-AU-Ywj" customClass="SearchViewController" customModule="MaePlanejaCliente" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y2R-al-eXC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="J5E-EE-Dtd"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPb-XR-nQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="-1371"/>
+        </scene>
         <!--Sliding View Controller-->
         <scene sceneID="BVY-nI-mMf">
             <objects>
@@ -521,7 +557,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1439" y="-1317"/>
+            <point key="canvasLocation" x="613" y="-1371"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6J6-vR-3s6">

@@ -19,6 +19,7 @@
 		9EC1D366DDF6FD66FEFCFC52 /* Pods_MaePlanejaCliente.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC13AC45A54B678037CAA53 /* Pods_MaePlanejaCliente.framework */; };
 		A0484F14229373850025B51D /* DadosFinaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F13229373850025B51D /* DadosFinaisViewController.swift */; };
 		A0484F1622937DFF0025B51D /* ProdutosFinaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F1522937DFF0025B51D /* ProdutosFinaisTableViewCell.swift */; };
+		DE0F54D1229EBA74009EE580 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F54D0229EBA74009EE580 /* SearchViewController.swift */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
 		FD8056DE2296D18200FFCFCE /* ProdutoDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */; };
@@ -73,6 +74,7 @@
 		AA795CF316A11EE10C905326 /* Pods-MaePlanejaClienteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteTests.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteTests/Pods-MaePlanejaClienteTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7E0718831C6D3B920B1651 /* Pods-MaePlanejaCliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaCliente.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0F54D0229EBA74009EE580 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EA55D8226EC57E7156CAAD9E /* Pods-MaePlanejaCliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaCliente.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente.release.xcconfig"; sourceTree = "<group>"; };
 		EAB2D5541BD0982BA2C9FBB1 /* Pods-MaePlanejaClienteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteUITests.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteUITests/Pods-MaePlanejaClienteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoDetalhesViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				FD9CFB2922846DBD002EBADB /* ViewController.swift */,
 				3F06702C228D9C41002A0535 /* GoogleService-Info.plist */,
 				FD9CFB2B22846DBD002EBADB /* Main.storyboard */,
+				DE0F54D0229EBA74009EE580 /* SearchViewController.swift */,
 				252AE12E229837440049A294 /* Slide.swift */,
 				FD9CFB2E22846DBE002EBADB /* Assets.xcassets */,
 				FD8056DF2296D3C200FFCFCE /* Colors.xcassets */,
@@ -479,6 +482,7 @@
 				FDDE5F1E228D8E1600164C8E /* HomeViewController.swift in Sources */,
 				3F06703522904FD2002A0535 /* Enuns.swift in Sources */,
 				3F06703122904572002A0535 /* Endereco.swift in Sources */,
+				DE0F54D1229EBA74009EE580 /* SearchViewController.swift in Sources */,
 				A0484F14229373850025B51D /* DadosFinaisViewController.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
 				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,

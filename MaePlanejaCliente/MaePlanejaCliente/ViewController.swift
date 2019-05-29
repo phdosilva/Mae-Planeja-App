@@ -18,7 +18,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var valorTotal: UILabel!
     
-    
     var produtosList:[Produto] = []
     var produtosListFinal: [Produto] = []
     let interactor = Interactor()
@@ -77,8 +76,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         return 140
     }
     
-    
-    
     @objc func downloadImage(url:String,downloadImageView:UIImageView) {
         let imageURL = URL(string:url)!
         
@@ -124,7 +121,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         Produto.save(itens: produtosListFinal)
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? SlidingViewController {
             destinationViewController.transitioningDelegate = self
@@ -133,6 +129,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             destinationViewController.produto = sender as? Produto
         }
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let produto = produtosList[indexPath.row]
         self.performSegue(withIdentifier: "showProduto", sender: produto)
