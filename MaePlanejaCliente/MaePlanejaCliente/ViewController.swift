@@ -39,14 +39,15 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                     let produtoObject = produtos.value as? [String: AnyObject]
                     let produtoNome = produtoObject?["nome_item"]
                     let produtoImagem = produtoObject?["imagem"]
-                    //let produtoImagens = produtoObject?["imagens"]
+                    let produtoImagens = produtoObject?["imagens"]
                     let produtoMes = produtoObject?["mes"]
                     let produtoPreco = produtoObject?["preco"]
                     let nomeLoja = produtoObject?["nome_loja"]
                     let recomendacao = produtoObject?["recomendacao"]
+                    let descProduto = produtoObject?["descProduto"]
                     let produto = Produto(nome_item: produtoNome as? String , preco: produtoPreco as? String,
-                                          imagem: produtoImagem as? String,
-                                          mes: produtoMes as? String, imagens: [""],nome_loja: nomeLoja as? String, recomendacao: recomendacao as? String)
+                                          imagem: produtoImagem as? String, mes: produtoMes as? String, imagens: produtoImagens as! [String],
+                                          nome_loja: nomeLoja as? String,recomendacao: recomendacao as? String, descProduto: descProduto as? String)
                     self.produtosList.append(produto)
                 }
             }
@@ -230,27 +231,27 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     /* ----- MENU ----- */
     
-    func populate(){
-        let ref: DatabaseReference! = Database.database().reference()
-        let produtoRef = ref.child(EnumTables.ProdutoLoja.rawValue)
-        let imgs = ["img01","img02","img03"]
-        let produtos = [Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "img01", mes: "3",imagens:imgs,nome_loja: "",recomendacao: ""),
-                        Produto(nome_item: "Carrinho de bebê", preco: "R$ 350,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Mamadeira", preco: "R$ 15,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Macacão", preco: "R$ 20,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Fralda de pano", preco: "R$ 5,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Pano umidecido", preco: "R$ 10,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Banheira", preco: "R$ 350,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
-                        Produto(nome_item: "Pote de leite", preco: "R$ 5,00", imagem: "img01", mes: "7",imagens:imgs,nome_loja: "tes",recomendacao: "1")]
-
-        for produto in produtos{
-            let key = produtoRef.childByAutoId().key
-            let prod = ["nome_item":produto.nome_item ?? "nome","preco":produto.preco ?? "R$100,00","imagem": produto.imagem ?? "img","mes":produto.mes ?? "3","imagens":produto.imagens,"nome_loja":produto.nome_loja ?? "Loja","recomendacao":produto.recomendacao ?? "1"] as [String : Any]
-            produtoRef.child(key!).setValue(prod)
-        }
-    }
+//    func populate(){
+//        let ref: DatabaseReference! = Database.database().reference()
+//        let produtoRef = ref.child(EnumTables.ProdutoLoja.rawValue)
+//        let imgs = ["img01","img02","img03"]
+//        let produtos = [Produto(nome_item: "Fralda", preco: "R$ 20,00", imagem: "img01", mes: "3",imagens:imgs,nome_loja: "",recomendacao: ""),
+//                        Produto(nome_item: "Carrinho de bebê", preco: "R$ 350,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Mamadeira", preco: "R$ 15,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Berço", preco: "R$ 400,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Cômoda", preco: "R$ 300,00", imagem: "img01", mes: "6",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Macacão", preco: "R$ 20,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Fralda de pano", preco: "R$ 5,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Pano umidecido", preco: "R$ 10,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Banheira", preco: "R$ 350,00", imagem: "img01", mes: "5",imagens:imgs,nome_loja: "tes",recomendacao: "1"),
+//                        Produto(nome_item: "Pote de leite", preco: "R$ 5,00", imagem: "img01", mes: "7",imagens:imgs,nome_loja: "tes",recomendacao: "1")]
+//
+//        for produto in produtos{
+//            let key = produtoRef.childByAutoId().key
+//            let prod = ["nome_item":produto.nome_item ?? "nome","preco":produto.preco ?? "R$100,00","imagem": produto.imagem ?? "img","mes":produto.mes ?? "3","imagens":produto.imagens,"nome_loja":produto.nome_loja ?? "Loja","recomendacao":produto.recomendacao ?? "1"] as [String : Any]
+//            produtoRef.child(key!).setValue(prod)
+//        }
+//    }
 
     func popularEndereco()
     {
