@@ -19,7 +19,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     @IBOutlet weak var valorTotal: UILabel!
     
     var produtosList:[Produto] = []
-    var produtosListFinal: [Produto] = []
+    //var produtosListFinal: [Produto] = []
     let interactor = Interactor()
 
     override func viewDidLoad() {
@@ -59,14 +59,15 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     override func viewDidAppear(_ animated: Bool) {
         atualizarValoresEListaFinal()
-        
+        self.produtoTableView.reloadData()
     }
     
     func atualizarValoresEListaFinal() {
-        produtosListFinal = Produto.getProdutos() ?? []
+        let produtosEscolhidos = Produto.getProdutos() ?? []
+        print(produtosEscolhidos)
         
         var valorT:Double = 0.0
-        for produto in produtosListFinal {
+        for produto in produtosEscolhidos {
             valorT += getValue(valor: produto.preco ?? "") ?? 0.0
         }
         valorTotal.text = "R$ " + String(valorT)
@@ -146,8 +147,9 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     @IBAction func finalizar(_ sender: Any) {
-        print(produtosListFinal.count)
-        Produto.save(itens: produtosListFinal)
+        let produtosEscolhidos = Produto.getProdutos() ?? []
+        print(produtosEscolhidos.count)
+        Produto.save(itens: produtosEscolhidos)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -191,10 +193,16 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
+        var produtosEscolhidos = Produto.getProdutos() ?? []
+        
         let action = UIContextualAction(style: .normal, title: "Remover") { (action, view, completion) in
-            if self.produtosListFinal.contains(self.produtosList[indexPath.row]){
-                if let index = self.produtosListFinal.index(of: self.produtosList[indexPath.row]){
-                    self.produtosListFinal.remove(at: index)
+            if produtosEscolhidos.contains(self.produtosList[indexPath.row]){
+                if let index = produtosEscolhidos.index(of: self.produtosList[indexPath.row]){
+                    
+                    produtosEscolhidos.remove(at: index)
+                    print(produtosEscolhidos)
+                    print(self.produtosList[indexPath.row].nome_item!)
+                    self.produtosList[indexPath.row].taNaLista = 0
                     if let valorT = self.produtosList[indexPath.row].preco{
                         self.decTotal(valor: valorT)
                         print("Excluído!")
@@ -205,21 +213,32 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             completion(true)
         }
 
+        Produto.save(itens: produtosEscolhidos)
+        
+        print(Produto.getProdutos() ?? [])
+        
         action.image = #imageLiteral(resourceName: "cancelar")
         action.backgroundColor = .red
-
+        
         return action
     }
     
     func AddAction(at indexPath: IndexPath) -> UIContextualAction {
+        var produtosEscolhidos = Produto.getProdutos() ?? []
+        
         let action = UIContextualAction(style: .normal, title: "Adicionar") { (action, view, completion) in
-             if !self.produtosListFinal.contains(self.produtosList[indexPath.row]){
-                self.produtosListFinal.append(self.produtosList[indexPath.row])
-                print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
+             if !produtosEscolhidos.contains(self.produtosList[indexPath.row]){
+                
+                self.produtosList[indexPath.row].taNaLista = 1
+                produtosEscolhidos.append(self.produtosList[indexPath.row])
+                
+                print("Adicionado \(String(describing: produtosEscolhidos.last?.nome_item))")
                 self.incTotal(valor: self.produtosList[indexPath.row].preco ?? "20")
             }
             completion(true)
         }
+        
+        Produto.save(itens: produtosEscolhidos)
         
         action.image = #imageLiteral(resourceName: "adicionar")
         action.backgroundColor = .green
