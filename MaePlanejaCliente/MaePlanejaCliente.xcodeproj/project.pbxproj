@@ -31,7 +31,6 @@
 		FD9CFB3D22846DBE002EBADB /* MaePlanejaClienteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB3C22846DBE002EBADB /* MaePlanejaClienteTests.swift */; };
 		FD9CFB4822846DBE002EBADB /* MaePlanejaClienteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */; };
 		FDDE5F18228AFB9700164C8E /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F17228AFB9700164C8E /* Produto.swift */; };
-		FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */; };
 		FDDE5F20228D997F00164C8E /* EnumTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDE5F1F228D997F00164C8E /* EnumTables.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +88,6 @@
 		FD9CFB4722846DBE002EBADB /* MaePlanejaClienteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaePlanejaClienteUITests.swift; sourceTree = "<group>"; };
 		FD9CFB4922846DBE002EBADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDDE5F17228AFB9700164C8E /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
-		FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
 		FDDE5F1F228D997F00164C8E /* EnumTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumTables.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +188,6 @@
 				FD8056DF2296D3C200FFCFCE /* Colors.xcassets */,
 				FD9CFB3022846DBE002EBADB /* LaunchScreen.storyboard */,
 				FD9CFB3322846DBE002EBADB /* Info.plist */,
-				FDDE5F1B228D8C8D00164C8E /* ProdutoTableViewCell.swift */,
 				25C667EB228DF70E00134C9E /* SlidingViewController.swift */,
 				A0484F13229373850025B51D /* DadosFinaisViewController.swift */,
 				FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */,
@@ -474,7 +471,6 @@
 				DE0F54D1229EBA74009EE580 /* SearchViewController.swift in Sources */,
 				A0484F14229373850025B51D /* DadosFinaisViewController.swift in Sources */,
 				FD9CFB2A22846DBD002EBADB /* ViewController.swift in Sources */,
-				FDDE5F1C228D8C8D00164C8E /* ProdutoTableViewCell.swift in Sources */,
 				3F067037229078A7002A0535 /* ProdutosTableViewCell.swift in Sources */,
 				25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */,
 				FD8056DE2296D18200FFCFCE /* ProdutoDetalhesViewController.swift in Sources */,

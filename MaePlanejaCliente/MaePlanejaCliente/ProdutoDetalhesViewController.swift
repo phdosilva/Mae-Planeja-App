@@ -13,7 +13,7 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
 
     var produto: Produto?
     var localSource: [ImageSource] = []
-   
+    
     @IBOutlet weak var slideShow: ImageSlideshow!
     @IBOutlet weak var nomeProduto: UILabel!
     @IBOutlet weak var descProduto: UILabel!
@@ -49,6 +49,13 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
             }
         }
        
+        if let produtoMostrado = produto {
+            if produtoMostrado.taNaLista == 0 {
+                addButtonOutlet.alpha = 1
+            } else {
+                addButtonOutlet.alpha = 0
+            }
+        }
         estilizarViews()
     }
   
@@ -60,6 +67,7 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func addItemButton(_ sender: Any) {
+        produto?.taNaLista = 1
         atualizarListaProdutosFinais()
         self.navigationController?.popViewController(animated: true)
     }

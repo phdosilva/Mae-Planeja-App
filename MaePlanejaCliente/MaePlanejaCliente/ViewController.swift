@@ -59,6 +59,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     override func viewDidAppear(_ animated: Bool) {
         atualizarValoresEListaFinal()
+        
     }
     
     func atualizarValoresEListaFinal() {
@@ -91,6 +92,12 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         cell.lojaTextView.text = produto.nome_loja
         cell.recomendacaoTextView.text = Produto.getRecomendacao(nivel: produto.recomendacao ?? "Recomendado")
         downloadImage(url: produto.imagem ?? "", downloadImageView: cell.produtoImageView)
+        
+        if produto.taNaLista == 0 {
+            cell.checkedOutlet.alpha = 0
+        } else {
+            cell.checkedOutlet.alpha = 1
+        }
         
         return cell
     }

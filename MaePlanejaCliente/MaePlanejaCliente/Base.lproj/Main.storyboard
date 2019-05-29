@@ -236,9 +236,21 @@
                                                     <rect key="frame" x="15" y="4" width="107" height="117"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checked" translatesAutoresizingMaskIntoConstraints="NO" id="pkY-98-qVY">
+                                                    <rect key="frame" x="344" y="45" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="OfL-AV-d8l"/>
+                                                        <constraint firstAttribute="width" constant="40" id="vWX-vc-jF5"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="pkY-98-qVY" secondAttribute="trailing" constant="10" id="Jga-ss-7eP"/>
+                                                <constraint firstItem="pkY-98-qVY" firstAttribute="centerY" secondItem="B3P-T4-K7y" secondAttribute="centerY" id="X30-kd-zBg"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkedOutlet" destination="pkY-98-qVY" id="l9d-C0-rlO"/>
                                             <outlet property="descProdutoTextView" destination="CEw-vc-mzS" id="xJf-1H-vhk"/>
                                             <outlet property="lojaTextView" destination="l4m-Gm-Mvz" id="pkA-C7-zOj"/>
                                             <outlet property="precoTextView" destination="l7Z-5b-Wdr" id="RZa-dP-aXz"/>
@@ -659,6 +671,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="checked" width="512" height="512"/>
         <image name="filter" width="27" height="27"/>
         <image name="launchIcon" width="266" height="304"/>
         <image name="lupa" width="27" height="27"/>

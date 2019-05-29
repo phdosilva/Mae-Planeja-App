@@ -15,6 +15,7 @@ class ProdutosTableViewCell: UITableViewCell {
     @IBOutlet weak var lojaTextView: UILabel!
     @IBOutlet weak var precoTextView: UILabel!
     @IBOutlet weak var recomendacaoTextView: UILabel!
+    @IBOutlet weak var checkedOutlet: UIImageView!
     
     
     override func awakeFromNib() {
