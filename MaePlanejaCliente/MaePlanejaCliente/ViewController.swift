@@ -67,7 +67,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         for produto in produtosListFinal {
             valorT += getValue(valor: produto.preco ?? "") ?? 0.0
         }
-        valorTotal.text = String(valorT)
+        valorTotal.text = "R$ " + String(valorT)
     }
     
     func estilizarViews() {
