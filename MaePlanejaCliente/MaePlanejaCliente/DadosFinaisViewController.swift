@@ -39,6 +39,11 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
         self.produtoTableView.delegate = self
         populate()
         self.produtoTableView.reloadData()
+        if produtos.isEmpty {
+            produtoTableView.alpha = 0
+        } else {
+            produtoTableView.alpha = 1
+        }
     }
     
     
