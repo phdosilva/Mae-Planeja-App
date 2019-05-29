@@ -17,8 +17,9 @@ class Produto : Codable, Equatable {
     var nome_loja: String?
     var recomendacao: String?
     var descProduto: String?
+    var taNaLista: Int?
     
-    init(nome_item: String?, preco: String?, imagem: String?,mes:String?,imagens:[String],nome_loja: String?,recomendacao: String?,descProduto: String?){
+    init(nome_item: String?, preco: String?, imagem: String?,mes:String?,imagens:[String],nome_loja: String?,recomendacao: String?,descProduto: String?, taNaLista: Int?){
         self.nome_item = nome_item
         self.preco = preco
         self.imagem = imagem
@@ -27,6 +28,7 @@ class Produto : Codable, Equatable {
         self.nome_loja = nome_loja
         self.recomendacao = recomendacao
         self.descProduto = descProduto
+        self.taNaLista = taNaLista
     }
     
     static func save(itens:[Produto]) {

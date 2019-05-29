@@ -44,9 +44,10 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                     let nomeLoja = produtoObject?["nome_loja"]
                     let recomendacao = produtoObject?["recomendacao"]
                     let descProduto = produtoObject?["descProduto"]
+                    let taNaLista = produtoObject?["taNaLista"]
                     let produto = Produto(nome_item: produtoNome as? String , preco: produtoPreco as? String,
                                           imagem: produtoImagem as? String, mes: produtoMes as? String, imagens: produtoImagens as! [String],
-                                          nome_loja: nomeLoja as? String,recomendacao: recomendacao as? String, descProduto: descProduto as? String)
+                                          nome_loja: nomeLoja as? String,recomendacao: recomendacao as? String, descProduto: descProduto as? String, taNaLista: taNaLista as? Int)
                     self.produtosList.append(produto)
                 }
             }
