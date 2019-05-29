@@ -60,6 +60,16 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func addItemButton(_ sender: Any) {
+        atualizarListaProdutosFinais()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func atualizarListaProdutosFinais() {
+        var produtosFinais = Produto.getProdutos() ?? []
+        if let produtoMostrado = produto {
+            produtosFinais.append(produtoMostrado)
+        }
+        Produto.save(itens: produtosFinais)
     }
     
     @objc func didTap() {
