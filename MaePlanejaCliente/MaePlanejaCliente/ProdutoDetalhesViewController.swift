@@ -53,6 +53,14 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
     }
   
     
+    @IBAction func lojaButton(_ sender: Any) {
+    }
+    
+    @IBAction func outrasLojasButton(_ sender: Any) {
+    }
+    
+    @IBAction func addItemButton(_ sender: Any) {
+    }
     
     @objc func didTap() {
         let fullScreenController = slideShow.presentFullScreenController(from: self)
