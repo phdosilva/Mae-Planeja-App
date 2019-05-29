@@ -21,27 +21,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQW-yk-asr">
                                 <rect key="frame" x="37.5" y="193.5" width="300" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mãe Planeja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-H2-LM6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Mãe Planeja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-H2-LM6">
                                         <rect key="frame" x="52" y="168" width="196" height="42"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <color key="textColor" red="1" green="0.62364382918180994" blue="0.74692446192219952" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XdY-VT-ols">
-                                        <rect key="frame" x="84" y="8" width="131" height="150"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="launchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="XdY-VT-ols">
+                                        <rect key="frame" x="84.5" y="8" width="131" height="150"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="hzH-qz-oSS"/>
-                                            <constraint firstAttribute="height" constant="144" id="q4q-tD-9y7"/>
+                                            <constraint firstAttribute="width" constant="131" id="5lq-6e-Z6Y"/>
+                                            <constraint firstAttribute="height" constant="150" id="Vwl-LS-1BU"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="XdY-VT-ols" firstAttribute="centerX" secondItem="RQW-yk-asr" secondAttribute="centerX" id="GLU-vv-ZXc"/>
                                     <constraint firstAttribute="height" constant="300" id="LhF-Xz-UYf"/>
-                                    <constraint firstItem="XdY-VT-ols" firstAttribute="centerX" secondItem="RQW-yk-asr" secondAttribute="centerX" id="MYm-AQ-tR9"/>
                                     <constraint firstItem="Ygl-H2-LM6" firstAttribute="centerX" secondItem="RQW-yk-asr" secondAttribute="centerX" id="RSA-KK-dC3"/>
                                     <constraint firstAttribute="width" constant="300" id="Szh-ha-sQ0"/>
-                                    <constraint firstItem="Ygl-H2-LM6" firstAttribute="top" secondItem="RQW-yk-asr" secondAttribute="top" constant="168" id="v2r-9e-ES7"/>
                                     <constraint firstItem="Ygl-H2-LM6" firstAttribute="top" secondItem="XdY-VT-ols" secondAttribute="bottom" constant="16" id="ytu-0K-daz"/>
                                 </constraints>
                             </view>

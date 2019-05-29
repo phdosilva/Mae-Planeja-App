@@ -56,12 +56,25 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         estilizarViews()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        atualizarValoresEListaFinal()
+    }
+    
+    func atualizarValoresEListaFinal() {
+        produtosListFinal = Produto.getProdutos() ?? []
+        
+        var valorT:Double = 0.0
+        for produto in produtosListFinal {
+            valorT += getValue(valor: produto.preco ?? "") ?? 0.0
+        }
+        valorTotal.text = String(valorT)
+    }
+    
     func estilizarViews() {
         valorTotal.layer.borderWidth = 0.1
         valorTotal.layer.cornerRadius = 5
-        
     }
-    
+
     /** TableView **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(produtosList.count)
@@ -104,7 +117,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         
         dataTask.resume()
     }
-    
     
     /* ----- MENU ----- */
     
@@ -305,6 +317,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
 
 }
+
 extension String
 {
     func replace(target: String, withString: String) -> String

@@ -29,7 +29,6 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
         if let produtosPref = Produto.getProdutos() {
             self.produtos = produtosPref
         }
-        
         //self.produtos = Produto.getProdutos()
     }
     
@@ -67,6 +66,26 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 128
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let produto = produtos[indexPath.row]
+        self.performSegue(withIdentifier: "showProdutoFinal", sender: produto)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? ProdutoDetalhesViewController {
+            destinationViewController.produto = sender as? Produto
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            produtos.remove(at: indexPath.row)
+            Produto.save(itens: produtos)
+            viewDidLoad()
+        }
+    }
+    
     
     @objc func downloadImage(url:String,downloadImageView:UIImageView) {
         let imageURL = URL(string:url)!

@@ -142,6 +142,7 @@
                     </view>
                     <connections>
                         <outlet property="produtoTableView" destination="P01-hP-sml" id="OZX-hG-G7Z"/>
+                        <segue destination="xNm-uz-Jzk" kind="show" id="aiO-cs-D8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hod-MF-uuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,24 +376,24 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="1078"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4K-Kf-hln">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="756.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="870.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pA7-8U-CdQ" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="300" id="8Hn-l5-zN9"/>
+                                                    <constraint firstAttribute="height" constant="414" id="8Hn-l5-zN9"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1N-90-mPw">
-                                                <rect key="frame" x="20" y="344" width="374" height="142.5"/>
+                                                <rect key="frame" x="20" y="458" width="374" height="142.5"/>
                                                 <string key="text">Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto Descrição do produto</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTp-i6-vsk">
-                                                <rect key="frame" x="20" y="666.5" width="374" height="70"/>
+                                                <rect key="frame" x="20" y="780.5" width="374" height="70"/>
                                                 <color key="backgroundColor" name="ColorPink"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="Ve0-jo-uHq"/>
@@ -402,7 +403,7 @@
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vy8-ZG-a6d">
-                                                <rect key="frame" x="20" y="496.5" width="374" height="70"/>
+                                                <rect key="frame" x="20" y="610.5" width="374" height="70"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da loja" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41A-mZ-zp7">
                                                         <rect key="frame" x="137" y="17" width="100" height="21"/>
@@ -437,13 +438,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do produto" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vza-mV-6di">
-                                                <rect key="frame" x="20" y="310" width="374" height="24"/>
+                                                <rect key="frame" x="20" y="424" width="374" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scQ-xF-aLN">
-                                                <rect key="frame" x="20" y="576.5" width="374" height="70"/>
+                                                <rect key="frame" x="20" y="690.5" width="374" height="70"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="NjO-YC-mVa"/>
@@ -674,4 +675,7 @@
             <color red="1" green="0.62999999523162842" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UEw-bq-TBq"/>
+    </inferredMetricsTieBreakers>
 </document>
