@@ -13,9 +13,12 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
 
     var produto: Produto?
     
-    let localSource = [ImageSource(image: UIImage(named: "img1")!), ImageSource(image: UIImage(named: "img2")!)]
+    var localSource: [ImageSource] = []
     
     @IBOutlet weak var slideShow: ImageSlideshow!
+    @IBOutlet weak var nomeProduto: UILabel!
+    @IBOutlet weak var descProduto: UILabel!
+    @IBOutlet weak var nomeLoja: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,8 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
         pageControl.currentPageIndicatorTintColor = UIColor.lightGray
         pageControl.pageIndicatorTintColor = UIColor.black
         slideShow.pageIndicator = pageControl
-        
+        //localSource = [ImageSource(image: UIImage(named: produto?.imagens[0] ?? "img1")!), ImageSource(image: UIImage(named: produto?.imagens[1] ?? "")!),ImageSource(image: UIImage(named: produto?.imagens[2] ?? "img1")!)]
+        localSource = [ImageSource(image: UIImage(named: "img1")!), ImageSource(image: UIImage(named: "img2")!)]
         slideShow.setImageInputs(localSource)
         
         let recognizer = UITapGestureRecognizer(target: self, action: #selector(ProdutoDetalhesViewController.didTap))
