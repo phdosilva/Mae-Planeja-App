@@ -18,6 +18,9 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var nomeProduto: UILabel!
     @IBOutlet weak var descProduto: UILabel!
     @IBOutlet weak var nomeLoja: UILabel!
+    @IBOutlet weak var addButtonOutlet: UIButton!
+    @IBOutlet weak var viewNomeLoja: UIView!
+    @IBOutlet weak var viewOutrasLojas: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +49,10 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
             }
         }
        
-        
+        estilizarViews()
     }
+  
+    
     
     @objc func didTap() {
         let fullScreenController = slideShow.presentFullScreenController(from: self)
@@ -58,6 +63,7 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
+    
     func downloadImage(from url: URL) {
         print("Download Started")
         getData(from: url) { data, response, error in
@@ -75,5 +81,16 @@ class ProdutoDetalhesViewController: UIViewController, UIScrollViewDelegate {
                 }
             }
         }
+    }
+    
+    func estilizarViews() {
+        addButtonOutlet.layer.borderWidth = 0.1
+        addButtonOutlet.layer.cornerRadius = 10
+        
+        viewNomeLoja.layer.borderWidth = 0.1
+        viewNomeLoja.layer.cornerRadius = 10
+        
+        viewOutrasLojas.layer.borderWidth = 0.1
+        viewOutrasLojas.layer.cornerRadius = 10
     }
 }

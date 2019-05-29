@@ -52,6 +52,14 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             }
             self.produtoTableView.reloadData()
         }
+        
+        estilizarViews()
+    }
+    
+    func estilizarViews() {
+        valorTotal.layer.borderWidth = 0.1
+        valorTotal.layer.cornerRadius = 5
+        
     }
     
     /** TableView **/
@@ -74,7 +82,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return 128
     }
     
     @objc func downloadImage(url:String,downloadImageView:UIImageView) {

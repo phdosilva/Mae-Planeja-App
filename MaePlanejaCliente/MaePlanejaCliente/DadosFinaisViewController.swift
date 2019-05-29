@@ -60,7 +60,7 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 128
     }
     
     @objc func downloadImage(url:String,downloadImageView:UIImageView) {
