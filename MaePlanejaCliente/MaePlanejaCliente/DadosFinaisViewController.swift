@@ -9,7 +9,8 @@
 import UIKit
 
 class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    @IBOutlet weak var valorTotalLabel: UILabel!
+    
     @IBOutlet weak var produtoTableView: UITableView!
     var produtos:[Produto] = []
     
@@ -29,6 +30,11 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
         if let produtosPref = Produto.getProdutos() {
             self.produtos = produtosPref
         }
+        
+        if let valorTotal = UserDefaults.standard.string(forKey: "valor_total") {
+            self.valorTotalLabel.text = "Valor total: \(valorTotal)"
+        }
+        
         //self.produtos = Produto.getProdutos()
     }
     

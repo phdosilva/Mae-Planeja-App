@@ -21,7 +21,13 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     var produtosList:[Produto] = []
     var produtosListFinal: [Produto] = []
     let interactor = Interactor()
-
+    let alertItemNaoAdicionado = UIAlertController(title: "Item não adicionado", message: "Este item ainda não foi adicionado", preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "OK", style: .default) {
+        (action:UIAlertAction) in
+            print("clicou em ok")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //populate()
@@ -54,8 +60,11 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
             self.produtoTableView.reloadData()
         }
         
+        self.alertItemNaoAdicionado.addAction(self.alertAction)
         estilizarViews()
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         atualizarValoresEListaFinal()
@@ -91,13 +100,17 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         cell.precoTextView.text = produto.preco
         cell.lojaTextView.text = produto.nome_loja
         cell.recomendacaoTextView.text = Produto.getRecomendacao(nivel: produto.recomendacao ?? "Recomendado")
+        cell.checkedOutlet.image = #imageLiteral(resourceName: "checked")
+        
         downloadImage(url: produto.imagem ?? "", downloadImageView: cell.produtoImageView)
         
-        if produto.taNaLista == 0 {
-            cell.checkedOutlet.alpha = 0
-        } else {
+        if self.produtosListFinal.contains(produto) {
             cell.checkedOutlet.alpha = 1
         }
+        else {
+            cell.checkedOutlet.alpha = 0
+        }
+        
         
         return cell
     }
@@ -148,6 +161,9 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     @IBAction func finalizar(_ sender: Any) {
         print(produtosListFinal.count)
         Produto.save(itens: produtosListFinal)
+        if let valor = self.valorTotal.text {
+             UserDefaults.standard.set(valor, forKey: "valor_total")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -192,17 +208,52 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     
     func deleteAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Remover") { (action, view, completion) in
-            if self.produtosListFinal.contains(self.produtosList[indexPath.row]){
-                if let index = self.produtosListFinal.index(of: self.produtosList[indexPath.row]){
-                    self.produtosListFinal.remove(at: index)
-                    if let valorT = self.produtosList[indexPath.row].preco{
-                        self.decTotal(valor: valorT)
-                        print("Excluído!")
+            if let aux = Produto.getProdutos() {
+                if aux.contains(self.produtosList[indexPath.row]) || self.produtosListFinal.contains(self.produtosList[indexPath.row]) {
+                    if let index = self.produtosListFinal.index(of: self.produtosList[indexPath.row]){
+                        self.produtosListFinal.remove(at: index)
+                        if let valorT = self.produtosList[indexPath.row].preco{
+                            self.decTotal(valor: valorT)
+                            
+                            Produto.save(itens: self.produtosListFinal)
+                            
+                            DispatchQueue.main.async {
+                                self.produtoTableView.reloadData()
+                            }
+                            
+                            print("Excluído!")
+                        }
                     }
                 }
+                else {
+                    self.present(self.alertItemNaoAdicionado, animated: true, completion: nil)
+                }
             }
+            else {
+                if self.produtosListFinal.contains(self.produtosList[indexPath.row]) {
+                    if let index = self.produtosListFinal.index(of: self.produtosList[indexPath.row]){
+                        self.produtosListFinal.remove(at: index)
+                        if let valorT = self.produtosList[indexPath.row].preco{
+                            self.decTotal(valor: valorT)
+                            
+                            Produto.save(itens: self.produtosListFinal)
+                            
+                            DispatchQueue.main.async {
+                                self.produtoTableView.reloadData()
+                            }
+                            
+                            print("Excluído!")
+                        }
+                    }
+                }
+                else {
+                    self.present(self.alertItemNaoAdicionado, animated: true, completion: nil)
+                }
+            }
+            
             //self.produtoTableView.deleteRows(at: [indexPath], with: .right)
             completion(true)
+            
         }
 
         action.image = #imageLiteral(resourceName: "cancelar")
@@ -211,13 +262,30 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         return action
     }
     
+    func addProdutoLista(indexPath: IndexPath) {
+        if !self.produtosListFinal.contains(self.produtosList[indexPath.row]) {
+            self.produtosListFinal.append(self.produtosList[indexPath.row])
+            print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
+            self.incTotal(valor: self.produtosList[indexPath.row].preco ?? "20")
+            
+            Produto.save(itens: self.produtosListFinal)
+            
+            DispatchQueue.main.async {
+                self.produtoTableView.reloadData()
+            }
+        }
+    }
+    
     func AddAction(at indexPath: IndexPath) -> UIContextualAction {
         let action = UIContextualAction(style: .normal, title: "Adicionar") { (action, view, completion) in
-             if !self.produtosListFinal.contains(self.produtosList[indexPath.row]){
-                self.produtosListFinal.append(self.produtosList[indexPath.row])
-                print("Adicionado \(String(describing: self.produtosListFinal.last?.nome_item))")
-                self.incTotal(valor: self.produtosList[indexPath.row].preco ?? "20")
+            if let aux = Produto.getProdutos() {
+                if !aux.contains(self.produtosList[indexPath.row]) {
+                    self.addProdutoLista(indexPath: indexPath)
+                }
+            } else {
+                self.addProdutoLista(indexPath: indexPath)
             }
+            
             completion(true)
         }
         
