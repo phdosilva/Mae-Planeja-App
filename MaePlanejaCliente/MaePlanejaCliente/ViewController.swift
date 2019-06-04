@@ -64,24 +64,19 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         estilizarViews()
     }
     
-    func deuRuimDemais() -> Int {
-        print("Deu ruim ao tentar desempacotar o index da funcao em viewWillDisappear")
-        return 0
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         atualizarValoresEListaFinal()
-        
     }
     
     func atualizarValoresEListaFinal() {
-        produtosListFinal = Produto.getProdutos() ?? []
+        self.produtosListFinal = Produto.getProdutos() ?? []
         
         var valorT:Double = 0.0
-        for produto in produtosListFinal {
+        for produto in self.produtosListFinal {
             valorT += getValue(valor: produto.preco ?? "") ?? 0.0
         }
-        valorTotal.text = "R$ " + String(valorT)
+        self.valorTotal.text = "R$ " + String(valorT)
+        self.produtoTableView.reloadData()
     }
     
     func estilizarViews() {
@@ -91,7 +86,6 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
 
     /** TableView **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(produtosList.count)
         return produtosList.count
     }
     
@@ -109,9 +103,11 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         
         if self.produtosListFinal.contains(produto) {
             cell.checkedOutlet.alpha = 1
+            self.produtosList[self.produtosList.index(of: produto)!].taNaLista = 1
         }
         else {
             cell.checkedOutlet.alpha = 0
+            self.produtosList[self.produtosList.index(of: produto)!].taNaLista = 0
         }
         
         
@@ -181,6 +177,18 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let produto = produtosList[indexPath.row]
         self.performSegue(withIdentifier: "showProduto", sender: produto)
+        print("Cheguei aqui na tableView")
+        // atualizarFlagsProdutos()
+    }
+    
+    func atualizarFlagsProdutos() {
+        for produto in self.produtosListFinal {
+            if self.produtosList.contains(produto) {
+                self.produtosList[self.produtosList.index(of: produto)!].taNaLista = 1
+            } else {
+                self.produtosList[self.produtosList.index(of: produto)!].taNaLista = 0
+            }
+        }
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
