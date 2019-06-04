@@ -157,7 +157,7 @@
                     <connections>
                         <outlet property="produtoTableView" destination="P01-hP-sml" id="OZX-hG-G7Z"/>
                         <outlet property="valorTotalLabel" destination="FLo-aW-1Hn" id="hDh-0X-uhh"/>
-                        <segue destination="xNm-uz-Jzk" kind="show" id="aiO-cs-D8g"/>
+                        <segue destination="xNm-uz-Jzk" kind="show" identifier="showProdutoFinal" id="aiO-cs-D8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hod-MF-uuI" userLabel="First Responder" sceneMemberID="firstResponder"/>

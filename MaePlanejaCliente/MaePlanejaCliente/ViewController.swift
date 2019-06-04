@@ -64,7 +64,10 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
         estilizarViews()
     }
     
-    
+    func deuRuimDemais() -> Int {
+        print("Deu ruim ao tentar desempacotar o index da funcao em viewWillDisappear")
+        return 0
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         atualizarValoresEListaFinal()
@@ -243,6 +246,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
                             }
                             
                             print("Excluído!")
+                            
                         }
                     }
                 }
