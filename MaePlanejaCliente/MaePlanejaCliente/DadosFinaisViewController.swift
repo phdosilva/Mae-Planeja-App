@@ -12,6 +12,8 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var valorTotalLabel: UILabel!
     
     @IBOutlet weak var produtoTableView: UITableView!
+    
+    @IBOutlet weak var cupomBotaoOutlet: UIButton!
     var produtos:[Produto] = []
     
 
@@ -32,7 +34,7 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         if let valorTotal = UserDefaults.standard.string(forKey: "valor_total") {
-            self.valorTotalLabel.text = "Valor total: \(valorTotal)"
+            self.valorTotalLabel.text = "     Valor total: \(valorTotal)"
         }
         
         //self.produtos = Produto.getProdutos()
@@ -49,6 +51,13 @@ class DadosFinaisViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             produtoTableView.alpha = 1
         }
+        
+        estilizarViews()
+    }
+    
+    func estilizarViews() {
+        cupomBotaoOutlet.layer.borderWidth = 0.1
+        cupomBotaoOutlet.layer.cornerRadius = 10
     }
     
     

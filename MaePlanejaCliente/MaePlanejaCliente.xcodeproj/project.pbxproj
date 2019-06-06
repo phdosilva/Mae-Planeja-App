@@ -19,6 +19,7 @@
 		A0484F14229373850025B51D /* DadosFinaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F13229373850025B51D /* DadosFinaisViewController.swift */; };
 		A0484F1622937DFF0025B51D /* ProdutosFinaisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0484F1522937DFF0025B51D /* ProdutosFinaisTableViewCell.swift */; };
 		DE0F54D1229EBA74009EE580 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F54D0229EBA74009EE580 /* SearchViewController.swift */; };
+		DE0F54D322A930FF009EE580 /* CupomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0F54D222A930FF009EE580 /* CupomViewController.swift */; };
 		DE98BABD48A9A6137BB38734 /* Pods_MaePlanejaClienteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */; };
 		E0DF1D2D00568953BF72FC22 /* Pods_MaePlanejaClienteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844376111D0D3FBF91638BF9 /* Pods_MaePlanejaClienteUITests.framework */; };
 		FD8056DE2296D18200FFCFCE /* ProdutoDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */; };
@@ -70,6 +71,7 @@
 		C8DBEC789E0B072F5ABAFE87 /* Pods_MaePlanejaClienteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaePlanejaClienteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7E0718831C6D3B920B1651 /* Pods-MaePlanejaCliente.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaCliente.debug.xcconfig"; path = "Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0F54D0229EBA74009EE580 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DE0F54D222A930FF009EE580 /* CupomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupomViewController.swift; sourceTree = "<group>"; };
 		EA55D8226EC57E7156CAAD9E /* Pods-MaePlanejaCliente.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaCliente.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaCliente/Pods-MaePlanejaCliente.release.xcconfig"; sourceTree = "<group>"; };
 		EAB2D5541BD0982BA2C9FBB1 /* Pods-MaePlanejaClienteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaePlanejaClienteUITests.release.xcconfig"; path = "Target Support Files/Pods-MaePlanejaClienteUITests/Pods-MaePlanejaClienteUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FD8056DD2296D18200FFCFCE /* ProdutoDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoDetalhesViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				FD9CFB2922846DBD002EBADB /* ViewController.swift */,
 				3F06702C228D9C41002A0535 /* GoogleService-Info.plist */,
 				FD9CFB2B22846DBD002EBADB /* Main.storyboard */,
+				DE0F54D222A930FF009EE580 /* CupomViewController.swift */,
 				DE0F54D0229EBA74009EE580 /* SearchViewController.swift */,
 				FD9CFB2E22846DBE002EBADB /* Assets.xcassets */,
 				FD8056DF2296D3C200FFCFCE /* Colors.xcassets */,
@@ -474,6 +477,7 @@
 				3F067037229078A7002A0535 /* ProdutosTableViewCell.swift in Sources */,
 				25C667EC228DF70E00134C9E /* SlidingViewController.swift in Sources */,
 				FD8056DE2296D18200FFCFCE /* ProdutoDetalhesViewController.swift in Sources */,
+				DE0F54D322A930FF009EE580 /* CupomViewController.swift in Sources */,
 				3F06703322904B9C002A0535 /* Cliente.swift in Sources */,
 				3F06702F228DA903002A0535 /* Loja.swift in Sources */,
 				FD9CFB2822846DBD002EBADB /* AppDelegate.swift in Sources */,

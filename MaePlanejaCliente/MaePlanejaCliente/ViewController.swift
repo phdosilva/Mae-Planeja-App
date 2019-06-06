@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIViewControllerTransitioningDelegate, U
     var produtosList:[Produto] = []
     var produtosListFinal: [Produto] = []
     let interactor = Interactor()
-    let alertItemNaoAdicionado = UIAlertController(title: "Item não adicionado", message: "Este item ainda não foi adicionado", preferredStyle: .alert)
+    let alertItemNaoAdicionado = UIAlertController(title: "Não pode ser excluído", message: "Para que o item possa ser deletado, ele precisa estar na lista final.", preferredStyle: .alert)
     let alertAction = UIAlertAction(title: "OK", style: .default) {
         (action:UIAlertAction) in
             print("clicou em ok")

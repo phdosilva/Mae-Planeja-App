@@ -155,6 +155,7 @@
                         <viewLayoutGuide key="safeArea" id="9xS-eP-FcZ"/>
                     </view>
                     <connections>
+                        <outlet property="cupomBotaoOutlet" destination="qRS-CG-qjR" id="dcp-ha-xwp"/>
                         <outlet property="produtoTableView" destination="P01-hP-sml" id="OZX-hG-G7Z"/>
                         <outlet property="valorTotalLabel" destination="FLo-aW-1Hn" id="hDh-0X-uhh"/>
                         <segue destination="xNm-uz-Jzk" kind="show" identifier="showProdutoFinal" id="aiO-cs-D8g"/>
@@ -164,36 +165,41 @@
             </objects>
             <point key="canvasLocation" x="613.04347826086962" y="260.49107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Cupom View Controller-->
         <scene sceneID="IHv-qj-Yae">
             <objects>
-                <viewController id="boV-Bl-SAM" sceneMemberID="viewController">
+                <viewController id="boV-Bl-SAM" customClass="CupomViewController" customModule="MaePlanejaCliente" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GJQ-0W-eji">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="qr" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-2J-LEt">
-                                <rect key="frame" x="39" y="135" width="296" height="242"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qr" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-2J-LEt">
+                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="BFY-P2-FKC"/>
+                                    <constraint firstAttribute="width" constant="250" id="mXz-vZ-AyQ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Coloque esta imagem a frente da câmera do telefone do lojista." textAlignment="center" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-Hp-1hN">
-                                <rect key="frame" x="27" y="343" width="321" height="239"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coloque esta imagem a frente da câmera do telefone do lojista." textAlignment="center" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iI0-Hp-1hN">
+                                <rect key="frame" x="20" y="573" width="374" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RAj-2J-LEt" firstAttribute="top" secondItem="XdP-Qy-Kfk" secondAttribute="top" constant="80" id="6Cv-Ab-TIv"/>
-                            <constraint firstItem="XdP-Qy-Kfk" firstAttribute="trailing" secondItem="iI0-Hp-1hN" secondAttribute="trailing" constant="25" id="JaW-OL-tyJ"/>
-                            <constraint firstItem="iI0-Hp-1hN" firstAttribute="leading" secondItem="XdP-Qy-Kfk" secondAttribute="leading" constant="29" id="YjO-Z0-obM"/>
-                            <constraint firstItem="iI0-Hp-1hN" firstAttribute="top" secondItem="RAj-2J-LEt" secondAttribute="bottom" constant="-16" id="doi-Jp-Oir"/>
-                            <constraint firstItem="XdP-Qy-Kfk" firstAttribute="trailing" secondItem="RAj-2J-LEt" secondAttribute="trailing" constant="38" id="kdK-0m-hl1"/>
-                            <constraint firstItem="XdP-Qy-Kfk" firstAttribute="bottom" secondItem="iI0-Hp-1hN" secondAttribute="bottom" constant="58" id="nv1-bc-AJg"/>
-                            <constraint firstItem="RAj-2J-LEt" firstAttribute="leading" secondItem="XdP-Qy-Kfk" secondAttribute="leading" constant="41" id="xhS-AG-dU6"/>
+                            <constraint firstItem="iI0-Hp-1hN" firstAttribute="leading" secondItem="XdP-Qy-Kfk" secondAttribute="leading" constant="20" id="KT7-Q1-6KU"/>
+                            <constraint firstItem="RAj-2J-LEt" firstAttribute="centerX" secondItem="GJQ-0W-eji" secondAttribute="centerX" id="SMy-I1-Tp1"/>
+                            <constraint firstItem="iI0-Hp-1hN" firstAttribute="top" secondItem="RAj-2J-LEt" secondAttribute="bottom" id="dDy-2b-qDx"/>
+                            <constraint firstItem="RAj-2J-LEt" firstAttribute="centerY" secondItem="GJQ-0W-eji" secondAttribute="centerY" id="oD0-2T-UaR"/>
+                            <constraint firstItem="XdP-Qy-Kfk" firstAttribute="trailing" secondItem="iI0-Hp-1hN" secondAttribute="trailing" constant="20" id="uUu-gN-Ht5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XdP-Qy-Kfk"/>
                     </view>
+                    <connections>
+                        <outlet property="mensagem" destination="iI0-Hp-1hN" id="hx9-Qo-Kek"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcl-Kh-wQq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -294,14 +300,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QT5-D2-V0Z">
                                 <rect key="frame" x="0.0" y="88" width="414" height="75"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPN-27-0lT">
-                                        <rect key="frame" x="369" y="24" width="27" height="27"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="filter"/>
-                                        <connections>
-                                            <segue destination="Ofp-vy-77T" kind="show" id="E0I-0W-tVz"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: R$ 0,0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGm-fI-hQh">
                                         <rect key="frame" x="18" y="22.5" width="125" height="30"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -329,9 +327,7 @@
                                 <constraints>
                                     <constraint firstItem="oGm-fI-hQh" firstAttribute="leading" secondItem="QT5-D2-V0Z" secondAttribute="leading" constant="18" id="1FD-zZ-xgZ"/>
                                     <constraint firstAttribute="height" constant="75" id="9re-MK-yYw"/>
-                                    <constraint firstAttribute="trailing" secondItem="HPN-27-0lT" secondAttribute="trailing" constant="18" id="PaB-4N-ce7"/>
                                     <constraint firstItem="oGm-fI-hQh" firstAttribute="centerY" secondItem="QT5-D2-V0Z" secondAttribute="centerY" id="PiB-1M-tai"/>
-                                    <constraint firstItem="HPN-27-0lT" firstAttribute="centerY" secondItem="QT5-D2-V0Z" secondAttribute="centerY" id="aGz-eb-5PB"/>
                                     <constraint firstItem="If1-7X-Win" firstAttribute="centerY" secondItem="QT5-D2-V0Z" secondAttribute="centerY" id="q2m-wN-Jaf"/>
                                     <constraint firstItem="If1-7X-Win" firstAttribute="centerX" secondItem="QT5-D2-V0Z" secondAttribute="centerX" id="qW2-lh-1Qi"/>
                                 </constraints>
@@ -356,26 +352,8 @@
                             <outletCollection property="gestureRecognizers" destination="4cf-Ai-26H" appends="YES" id="QnC-1q-JP2"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="7es-L5-zyB" colorLabel="IBBuiltInLabel-Red">
-                        <barButtonItem key="leftBarButtonItem" image="menu-icon" id="TIo-5D-ISL" colorLabel="IBBuiltInLabel-Green">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="3fU-ce-yId" kind="presentation" identifier="showSlidingMenu" id="B0t-Q0-X3B"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="lupa" style="plain" id="jj4-HQ-2lK">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="08E-OW-SuC">
-                                <rect key="frame" x="367" y="8.5" width="27" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="lupa"/>
-                                <connections>
-                                    <segue destination="WDE-AU-Ywj" kind="show" identifier="showSearch" id="mIj-oa-GJK"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="7es-L5-zyB" colorLabel="IBBuiltInLabel-Red"/>
                     <connections>
-                        <outlet property="filterButton" destination="HPN-27-0lT" id="xXI-m8-fmR"/>
                         <outlet property="produtoTableView" destination="0gq-cr-E7w" id="iKm-om-8mk"/>
                         <outlet property="valorTotal" destination="oGm-fI-hQh" id="GZJ-br-CmR"/>
                         <segue destination="xNm-uz-Jzk" kind="show" identifier="showProduto" id="UEw-bq-TBq"/>
@@ -687,10 +665,7 @@
     </scenes>
     <resources>
         <image name="checked" width="512" height="512"/>
-        <image name="filter" width="27" height="27"/>
         <image name="launchIcon" width="266" height="304"/>
-        <image name="lupa" width="27" height="27"/>
-        <image name="menu-icon" width="22" height="21"/>
         <image name="qr" width="1600" height="1600"/>
         <namedColor name="Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -709,6 +684,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UEw-bq-TBq"/>
+        <segue reference="aiO-cs-D8g"/>
     </inferredMetricsTieBreakers>
 </document>
